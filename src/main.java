@@ -32,8 +32,9 @@ public class main {
             int option = scanner.nextInt();
             scanner.nextLine();
             
+            
             switch(option) {
-                case 1:
+                case 1 :
                 //where we put the play game method
                 break;
             
