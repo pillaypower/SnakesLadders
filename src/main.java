@@ -18,7 +18,7 @@ public class main {
         //gets the code from the other claseses
         User user = new User();
         Dice dice= new Dice();
-        board board = new Board();
+        Board board = new Board();
         boolean exit = false;
         
         Scanner scanner = new Scanner(System.in);
