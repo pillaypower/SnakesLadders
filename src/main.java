@@ -10,10 +10,13 @@
 public class main {
     
     public static void main(String[] args) {
+        //gets the code from the other claseses
         User user = new User();
         Dice dice= new Dice();
         board board = new Board();
        
+        
+        
         
     }
     
