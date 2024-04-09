@@ -17,7 +17,7 @@ public class main {
         
         Scanner scanner = new Scanner(System.in);
        
-        System.out.println("Press 'r' to Roll Dice");
+        System.out.println( name + "press 'r' to Roll Dice");
         String input = scanner.nextLine();
         
         while(!input.equalsIgnoreCase("r")){
