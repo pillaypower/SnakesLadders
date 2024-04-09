@@ -13,6 +13,7 @@ public class main {
         User user = new User();
         Dice dice= new Dice();
         board board = new Board();
+       
     }
     
     

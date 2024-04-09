@@ -9,18 +9,18 @@
  */
 public class User {
     private String name;
-    private String position;
+    private int position;
             
-    public Player(String name) {
+    public User(String name) {
         this.name = name;
         this.position = 0;
     }
     
     public String getName() {
-        return namel
+        return name;
     }
     
-    public String getPosition() {
+    public int getPosition() {
         return position;
     }
     
