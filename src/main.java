@@ -17,9 +17,10 @@ public class main {
         User user = new User();
         Dice dice= new Dice();
         board board = new Board();
+        
+        //introduction part of the code
         boolean exit = false;
-        
-        
+      
         while(!exit) {
             System.out.println("Snakers and Ladders! (CLI Version)");
             System.out.println("\n");
@@ -50,8 +51,7 @@ public class main {
    
             }
         }
-        scanner.close();
-        
+        scanner.close(); 
         
         Scanner scanner = new Scanner(System.in);
        
