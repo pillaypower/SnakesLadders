@@ -13,12 +13,15 @@ import java.util.Scanner;
 public class main {
     
     public static void main(String[] args) {
+        
+      
         //gets the code from the other claseses
         User user = new User();
         Dice dice= new Dice();
         board board = new Board();
         boolean exit = false;
         
+        Scanner scanner = new Scanner(System.in);
         
         while(!exit) {
             System.out.println("Snakers and Ladders! (CLI Version)");
@@ -53,7 +56,6 @@ public class main {
         scanner.close();
         
         
-        Scanner scanner = new Scanner(System.in);
        
         System.out.println( name + "press 'R' to Roll Dice");
         String input = scanner.nextLine();
