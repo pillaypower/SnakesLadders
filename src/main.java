@@ -14,6 +14,7 @@ public class main {
         Dice dice= new Dice();
         board board = new Board();
        
+        
     }
     
     
