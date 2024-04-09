@@ -1,5 +1,8 @@
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -53,14 +56,30 @@ public class leaderboard {
     public void saveFile() {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("leaderboard.txt"))) {
             for(ScoreEntry save : scores) {
-                writer.write(save.getUserName() + "." + save.getNumMoves() + "." save.getNumSnakesBitten() + 
-                "." + save.getNumLaddersClimbed());
+                writer.write(save.getUserName() + "." + save.getNumMoves() + "." +  save.getNumSnakesBitten() + save.getNumLaddersClimbed());
             }
         } catch (IOException ex) {
             Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);
         } 
         }
         
-    
+    public void loadFile() {
+        scores.clear();
+        try(BufferedReader reader = new BufferedReader(new FileReader("leaderboard.txt"))) {
+            String blank;
+            while((blank = reader.readLine()) != null) {
+                String[] units = blank.split(",");
+                if(units.length == 5) {
+                    String userName = units[0];
+                    int numMoves = Integer.parseInt(units[1]);
+                    int numSnakesBitten = Integer.parseInt(units[2]);
+                    int numLaddersClimbed = Integer.parseInt(units[3]);
+                    scores.add(new ScoreEntry(userName, numMoves, numSnakesBitten, numLaddersClimbed));
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-}
+    }
+
