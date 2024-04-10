@@ -45,7 +45,7 @@ public class leaderboard {
                 System.out.println("Player:" + entry.getUserName());
                 System.out.println("Number of Moves:" + entry.getNumMoves());
                 System.out.println("Number of Snakes Bitten:" + entry.getNumSnakesBitten());  
-                System.out.println("Number of Ladders Climbed:" + entry.getNumSnakesBitten());
+                System.out.println("Number of Ladders Climbed:" + entry.getNumLaddersClimbed());
                 System.out.println("\n");
             }
            
@@ -57,7 +57,7 @@ public class leaderboard {
     public void saveFile() {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("leaderboard.txt"))) {
             for(ScoreEntry save : scores) {
-                writer.write(save.getUserName() + "." + save.getNumMoves() + "." +  save.getNumSnakesBitten() + save.getNumLaddersClimbed());
+                writer.write(save.getUserName() + "," + save.getNumMoves() + "," +  save.getNumSnakesBitten() + save.getNumLaddersClimbed());
             }
         } catch (IOException ex) {
             Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);
@@ -79,6 +79,8 @@ public class leaderboard {
                 }
             }
         } catch (FileNotFoundException ex) {
+            Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
