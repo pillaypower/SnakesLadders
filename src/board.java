@@ -19,7 +19,8 @@ public class board {
        //This part of the code tells what position the snakes are at. We picked random positions for this that seemed reasonable
        snakes.add(7);
        snakes.add(41);
-       snakes.add(89);
+       snakes.add(79);
+       snakes.add(99);
        
        //This part of the code tells what position the ladders are at. We picked random positions for this that seemed reasonable
        ladders.add(9);
