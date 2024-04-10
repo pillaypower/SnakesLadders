@@ -49,14 +49,8 @@ public class main {
             }
         }
         scanner.close();
+ }     
         
-        
-
-
-
-
-    
-
     private static void gameRunning(leaderboard leaderboard) {
         Scanner scanner = new Scanner(System.in);
 
@@ -94,9 +88,10 @@ public class main {
         System.out.println(user.getName() + "has completed the game!");
         System.out.println("Game Over!");
 
-        leaderboard.addScore(user.getName(), user.getnumMoves(), user.getnumSnakesBitten(), user.getnumLaddersClimbed());
+        leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
 
     }
+}
     
 //    private static void displayLeaderboard(leaderboard leaderboard) {
 //        List<ScoreEntry> scores = leaderboard.getScores();
@@ -110,7 +105,7 @@ public class main {
 //        }
 //    }
     
-}
+
 
 //
 //    System.out.println (name 
