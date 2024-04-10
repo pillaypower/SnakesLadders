@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author ishaa
- */
-
-=======
 
 import java.util.Random;
 
@@ -36,4 +23,4 @@ public class Dice {
     }
 }
 
->>>>>>> e71817761af664a3f379209040ab3ec923162f10
+
