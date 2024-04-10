@@ -1,0 +1,6 @@
+
+ish
+Number of Moves:30
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 2
+
