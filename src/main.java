@@ -17,14 +17,13 @@ public class main {
         leaderboard.loadFile();
 
         boolean exit = false;
-
+        System.out.println("Snakers and Ladders! (CLI Version)\n");
         while (!exit) {
-            System.out.println("Snakers and Ladders! (CLI Version)");
-            System.out.println("\n");
             System.out.println("Please Choose an option");
             System.out.println("1. Start Game");
             System.out.println("2. View Leaderboard");
             System.out.println("3. Exit");
+            System.out.println("\n");
 
             int option = scanner.nextInt();
             scanner.nextLine();
@@ -40,17 +39,17 @@ public class main {
 
                 case 3:
                     exit = true;
-                    System.out.println("Thank you for playing!");
+                    System.out.println("\nThank you for playing!");
                     break;
 
                 default:
-                    System.out.println("Invalid option, Please try again. ");
+                    System.out.println("\nInvalid option, Please try again. ");
 
             }
         }
         scanner.close();
- }     
-        
+    }
+
     private static void gameRunning(leaderboard leaderboard) {
         Scanner scanner = new Scanner(System.in);
 
@@ -85,7 +84,7 @@ public class main {
             }
 
         }
-        
+
         System.out.println(user.getName() + " \n has completed the game!");
         System.out.println("Game Over! Thank you for playing!");
 
@@ -93,7 +92,7 @@ public class main {
 
     }
 }
-    
+
 //    private static void displayLeaderboard(leaderboard leaderboard) {
 //        List<ScoreEntry> scores = leaderboard.getScores();
 //        if(!scores.isEmpty()) {
@@ -105,9 +104,6 @@ public class main {
 //        
 //        }
 //    }
-    
-
-
 //
 //    System.out.println (name 
 //    + "press 'R' to Roll Dice");
