@@ -62,17 +62,17 @@ public class main {
 
         while (user.getPosition() < 100) {
             int rollNum = dice.roll();
-            System.out.println(user.getName() + "rolled a " + rollNum);
+            System.out.println(user.getName() + " rolled a: " + rollNum);
             int newPosition = user.getPosition() + rollNum;
             if (newPosition <= 100) {
                 user.setPosition(newPosition);
-                System.out.println(user.getName() + "'s new postion: " + user.getPosition());
+                System.out.println(user.getName() + "'s new postion: " + user.getPosition() + "\n");
                 if (board.snakePosition(user.getPosition())) {
-                    System.out.println(user.getName() + "has been bit by a snake! Moved down");
+                    System.out.println(user.getName() + " has been bit by a snake! Moved down");
                     int downward = board.getSnakeDeduction(user.getPosition());
                     user.setPosition(user.getPosition() + downward);
                     user.snake();
-                    System.out.println(user.getName() + "'s new position:" + user.getPosition());
+                    System.out.println(user.getName() + "'s new position: " + user.getPosition() + "\n");
 
                 } else if (board.ladderPosition(user.getPosition())) {
                     System.out.println(user.getName() + " climbed a ladder! Moved up");
@@ -85,8 +85,9 @@ public class main {
             }
 
         }
-        System.out.println(user.getName() + "has completed the game!");
-        System.out.println("Game Over!");
+        
+        System.out.println(user.getName() + " \n has completed the game!");
+        System.out.println("Game Over! Thank you for playing!");
 
         leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
 
