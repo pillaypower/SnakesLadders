@@ -30,6 +30,19 @@ public class User {
         return position;
     }
     
+    public int getNumMoves(){
+        return numMoves;
+    }
+    
+    public int getNumLaddersClimbed(){
+        return numLaddersClimbed;
+    }
+    
+    public int getSnakesBitten(){
+        return numSnakesBitten;
+    }
+    
+    
     public void setPosition(int position) {
         this.position = position;
         numMoves++;
