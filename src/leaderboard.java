@@ -28,6 +28,7 @@ public class leaderboard {
         scores = new ArrayList<>();
     }
     
+    
     public void addScore(String userName, int numMoves, int numSnakesBitten, int numLaddersClimbed) {
         scores.add(new ScoreEntry(userName, numMoves, numSnakesBitten, numLaddersClimbed));
         saveFile();
