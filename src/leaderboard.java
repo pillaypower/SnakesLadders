@@ -57,7 +57,7 @@ public class leaderboard {
     public void saveFile() {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("./resources/leaderboard.txt"))) {
             for(ScoreEntry save : scores) {
-                writer.write(save.getUserName() + "," + save.getNumMoves() + "," +  save.getNumSnakesBitten() + save.getNumLaddersClimbed());
+                writer.write("\n" + save.getUserName() + "\nNumber of Moves:" + save.getNumMoves() + "\nNumber of Snakes Bitten: " +  save.getNumSnakesBitten() + "\nNumber of Ladders Climbed: " +  save.getNumLaddersClimbed() + "\n\n");
             }
         } catch (IOException ex) {
             Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);

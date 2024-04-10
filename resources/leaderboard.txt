@@ -1,0 +1,12 @@
+
+three
+Number of Moves:30
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 3
+
+
+four
+Number of Moves:48
+Number of Snakes Bitten: 5
+Number of Ladders Climbed: 1
+
