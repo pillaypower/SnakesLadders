@@ -69,4 +69,12 @@ public class main {
         System.out.println(name + " rolled: " + rollResult);
         
     }
+    
+    if (Board.snakePosition(position)){
+        System.out.println("Hsssssss! You got bit by a snake!");
+    }
+    
+    if (Board.laddersPosition(position)){
+        System.out.println("Congrats! You climbed a ladder!");
+    }
 }
