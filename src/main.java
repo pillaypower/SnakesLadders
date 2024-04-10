@@ -12,15 +12,12 @@ import java.util.Scanner;
 public class main {
 
     public static void main(String[] args) {
-
-        //gets the code from the other claseses
-        User User = new User();
-        Dice dice = new Dice();
-        board board = new Board();
-        boolean exit = false;
-
+        
         Scanner scanner = new Scanner(System.in);
-
+        leaderboard leaderboard = new leaderboard("leaderboard.txt");
+        leaderboard.loadFile();
+    
+        boolean exit = false;
         while (!exit) {
             System.out.println("Snakers and Ladders! (CLI Version)");
             System.out.println("\n");
@@ -58,7 +55,7 @@ public class main {
 
 
 
-    private static void gameRunning(Leaderboard leaderboard) {
+    private static void gameRunning(leaderboard leaderboard) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ener your name: ");
@@ -95,29 +92,6 @@ public class main {
 
     }
 
-    System.out.println (name 
-    + "press 'R' to Roll Dice");
-        String input = scanner.nextLine();
-
-    while(!input.equalsIgnoreCase ( 
-        "r")){
-            System.out.println("Error! Input not valid");
-        input = scanner.nextLine();
-    }
-
-    int rollResult = dice.roll();
-
-    System.out.println (name 
-
-+ " rolled: " + rollResult);
-        
-    }
-    
-    if (Board.snakePosition(position)){
-        System.out.println("Hsssssss! You got bit by a snake!");
-    }
-    
-    if (Board.laddersPosition(position)){
-        System.out.println("Congrats! You climbed a ladder!");
-    }
 }
+
+
