@@ -55,7 +55,7 @@ public class leaderboard {
     }
     
     public void saveFile() {
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("leaderboard.txt"))) {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("./resources/leaderboard.txt"))) {
             for(ScoreEntry save : scores) {
                 writer.write(save.getUserName() + "," + save.getNumMoves() + "," +  save.getNumSnakesBitten() + save.getNumLaddersClimbed());
             }
@@ -66,7 +66,7 @@ public class leaderboard {
         
     public void loadFile() {
         scores.clear();
-        try(BufferedReader reader = new BufferedReader(new FileReader("leaderboard.txt"))) {
+        try(BufferedReader reader = new BufferedReader(new FileReader("./resources/leaderboard.txt"))) {
             String blank;
             while((blank = reader.readLine()) != null) {
                 String[] units = blank.split(",");
