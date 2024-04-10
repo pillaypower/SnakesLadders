@@ -78,3 +78,4 @@ public class main {
         System.out.println("Congrats! You climbed a ladder!");
     }
 }
+
