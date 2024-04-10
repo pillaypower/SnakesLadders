@@ -12,14 +12,11 @@ import java.util.Scanner;
 public class main {
 
     public static void main(String[] args) {
-
-        //gets the code from the other claseses
-        User User = new User();
-        Dice dice = new Dice();
-        board board = new Board();
-        boolean exit = false;
-
         Scanner scanner = new Scanner(System.in);
+        leaderboard leaderboard = new leaderboard("leaderboard.txt");
+        leaderboard.loadFile();
+
+        boolean exit = false;
 
         while (!exit) {
             System.out.println("Snakers and Ladders! (CLI Version)");
@@ -34,7 +31,7 @@ public class main {
 
             switch (option) {
                 case 1:
-                    //where we put the play game method
+                    gameRunning(leaderboard);
                     break;
 
                 case 2:
@@ -58,13 +55,15 @@ public class main {
 
 
 
-    private static void gameRunning(Leaderboard leaderboard) {
+    
+
+    private static void gameRunning(leaderboard leaderboard) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ener your name: ");
-        String userName = scanner.nextLine();
+        System.out.print("Enter username: ");
+        String name = scanner.nextLine();
 
-        User user = new User(userName);
+        User user = new User(name);
         Dice dice = new Dice();
 
         while (user.getPosition() < 100) {
@@ -92,32 +91,51 @@ public class main {
             }
 
         }
+        System.out.println(user.getName() + "has completed the game!");
+        System.out.println("Game Over!");
 
-    }
+        leaderboard.addScore(user.getName(), user.getnumMoves(), user.getnumSnakesBitten(), user.getnumLaddersClimbed());
 
-    System.out.println (name 
-    + "press 'R' to Roll Dice");
-        String input = scanner.nextLine();
-
-    while(!input.equalsIgnoreCase ( 
-        "r")){
-            System.out.println("Error! Input not valid");
-        input = scanner.nextLine();
-    }
-
-    int rollResult = dice.roll();
-
-    System.out.println (name 
-
-+ " rolled: " + rollResult);
-        
     }
     
-    if (Board.snakePosition(position)){
-        System.out.println("Hsssssss! You got bit by a snake!");
-    }
+//    private static void displayLeaderboard(leaderboard leaderboard) {
+//        List<ScoreEntry> scores = leaderboard.getScores();
+//        if(!scores.isEmpty()) {
+//            System.out.println("Leaderboard:");
+//            System.out.println("Player Name, Moves, Snakes Bitten, Ladders Climbed");
+//            for(ScoreEntry entry : scores) {
+//                System.out.println(entry.getName() + entry.getMoves() + entry.get)
+//            }
+//        
+//        }
+//    }
     
-    if (Board.laddersPosition(position)){
-        System.out.println("Congrats! You climbed a ladder!");
-    }
 }
+
+//
+//    System.out.println (name 
+//    + "press 'R' to Roll Dice");
+//        String input = scanner.nextLine();
+//
+//    while(!input.equalsIgnoreCase ( 
+//        "r")){
+//            System.out.println("Error! Input not valid");
+//        input = scanner.nextLine();
+//    }
+//
+//    int rollResult = dice.roll();
+//
+//    System.out.println (name 
+//
+//+ " rolled: " + rollResult);
+//        
+//    }
+//    
+//    if (Board.snakePosition(position)){
+//        System.out.println("Hsssssss! You got bit by a snake!");
+//    }
+//    
+//    if (Board.laddersPosition(position)){
+//        System.out.println("Congrats! You climbed a ladder!");
+//    }
+//}
