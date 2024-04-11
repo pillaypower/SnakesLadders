@@ -1,6 +1,0 @@
-
-Test Run
-Number of Moves:35
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 1
-

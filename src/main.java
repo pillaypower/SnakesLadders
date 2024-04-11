@@ -50,7 +50,7 @@ public class main {
         scanner.close();
     }
 
-    private static void gameRunning(leaderboard leaderboard) {
+    private static void gameRunning(leaderboard leaderboard, Board board) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter username: ");
@@ -58,14 +58,24 @@ public class main {
 
         User user = new User(name);
         Dice dice = new Dice();
+        
+        System.out.println( user.getName() + " press 'r' to roll");
+        String input = scanner.nextLine();
+        if(!input.equalsIgnoreCase("r")){
+            System.out.print("Error");
+            return;
+        }
 
         while (user.getPosition() < 100) {
             int rollNum = dice.roll();
+            
             System.out.println(user.getName() + " rolled a: " + rollNum);
             int newPosition = user.getPosition() + rollNum;
+           
             if (newPosition <= 100) {
                 user.setPosition(newPosition);
                 System.out.println(user.getName() + "'s new postion: " + user.getPosition() + "\n");
+                
                 if (board.snakePosition(user.getPosition())) {
                     System.out.println(user.getName() + " has been bit by a snake! Moved down");
                     int downward = board.getSnakeDeduction(user.getPosition());
@@ -78,14 +88,14 @@ public class main {
                     int upward = board.getLadderAddition(user.getPosition());
                     user.setPosition(user.getPosition() + upward);
                     user.ladder();
-                    System.out.println(user.getName() + "'s new position:" + user.getPosition() + "\n");
+                    System.out.println(user.getName() + "'s new position:" + user.getPosition());
 
                 }
             }
 
         }
 
-        System.out.println("\n" + user.getName() + "has completed the game!");
+        System.out.println(user.getName() + " \n has completed the game!");
         System.out.println("Game Over! Thank you for playing!");
 
         leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
