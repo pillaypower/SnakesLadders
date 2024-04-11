@@ -64,7 +64,7 @@ public class main {
 
         while (!turnEnding) {
             System.out.println("\n" + user.getName() + "'s turn: ");
-            System.out.print(user.getName() + " press 'r' to roll ");
+            System.out.print(user.getName() + " press 'r' to roll: \n");
             String input = scanner.nextLine();
 
             if (input.equalsIgnoreCase("r")) {
@@ -81,16 +81,13 @@ public class main {
                 System.out.println("Invalid Input");
             }
             
-            if(user.getPosition() == 100){
+            if(user.getPosition() <= 100){
                 turnEnding = true;
             
         } else {
                 System.out.println("Error");
                 }
         
-        System.out.println(user.getName() + " has completed the game!");
-        System.out.println("GAMEOVER");
-
         leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
 
     }
