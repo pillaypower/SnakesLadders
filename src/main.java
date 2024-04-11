@@ -1,4 +1,5 @@
 
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -56,68 +57,61 @@ public class main {
 
         User user = new User(name);
         Dice dice = new Dice();
-        
-            
-            while(user.getPosition() < 100){
-                System.out.println("\n" + user.getName() + "'s Turn: ");
-                System.out.print(user.getName() + "press 'r' to roll ");
-                String input = scanner.nextLine();
-                  
-            
-            if(input.equalsIgnoreCase("r")) {
+
+        while (user.getPosition() < 100) {
+            System.out.println("\n" + user.getName() + "'s Turn: ");
+            System.out.print(user.getName() + "press 'r' to roll ");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("r")) {
                 int rollNum = dice.roll();
                 System.out.println(user.getName() + " rolled a " + rollNum);
-              
+
                 int newPosition = user.getPosition() + rollNum;
                 if (newPosition <= 100) {
-                user.setPosition(newPosition);
-                System.out.println(user.getName() + "'s new postion: " + user.getPosition() + "\n");
-                directsSnakeAndLadder(user, newPosition);
+                    user.setPosition(newPosition);
+                    System.out.println(user.getName() + "'s new postion: " + user.getPosition() + "\n");
+                    directsSnakeAndLadder(user, newPosition);
                 }
-            } else{
+            } else {
                 System.out.println("Invalid Input");
             }
-            }
-            System.out.println(user.getName() + " has completed the game!");
-            System.out.println("GAMEOVER");
-            
-            leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
-               
+        }
+        System.out.println(user.getName() + " has completed the game!");
+        System.out.println("GAMEOVER");
+
+        leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
+
     }
-               
-    
+
     private static void directsSnakeAndLadder(User user, int newPosition) {
-    if(board.snakePosition(newPosition)) {
-        System.out.print(user.getName() + " has been bit by a snake! Now moved down");
-        int moveDown = board.getSnakeDeduction(newPosition);
-        user.setPosition(newPosition + moveDown);
-        user.snake();
-        System.out.println(user.getName() + "'s new position: " + user.getPosition());
-        
-    } else if(board.ladderPosition(newPosition)) {
-        System.out.println(user.getName() + " climbed a ladder! Moved up");
-        int moveUp = board.getLadderAddition(newPosition);
-        user.setPosition(newPosition + moveUp);
-        user.ladder();
-        System.out.println(user.getName() + "'s new position: " + user.getPosition());
-    }       
+        if (board.snakePosition(newPosition)) {
+            System.out.print(user.getName() + " has been bit by a snake! Now moved down");
+            int moveDown = board.getSnakeDeduction(newPosition);
+            user.setPosition(newPosition + moveDown);
+            user.snake();
+            System.out.println(user.getName() + "'s new position: " + user.getPosition());
+
+        } else if (board.ladderPosition(newPosition)) {
+            System.out.println(user.getName() + " climbed a ladder! Moved up");
+            int moveUp = board.getLadderAddition(newPosition);
+            user.setPosition(newPosition + moveUp);
+            user.ladder();
+            System.out.println(user.getName() + "'s new position: " + user.getPosition());
+        }
     }
-    
-     private static void displayLeaderboard(leaderboard leaderboard) {
+
+    private static void displayLeaderboard(leaderboard leaderboard) {
         List<ScoreEntry> scores = leaderboard.getScores();
-        if(!scores.isEmpty()) {
+        if (!scores.isEmpty()) {
             System.out.println("Leaderboard:");
             System.out.println("Player Name, Moves, Snakes Bitten, Ladders Climbed");
-            for(ScoreEntry entry : scores) {
+            for (ScoreEntry entry : scores) {
                 System.out.println(entry.getUserName() + entry.getNumMoves() + entry.getNumSnakesBitten() + entry.getNumLaddersClimbed());
             }
-        
+
         } else {
-        System.out.println("Leaderboard is currently empty");
-    }   
+            System.out.println("Leaderboard is currently empty");
+        }
+    }
 }
-}
-
-
-   
-
