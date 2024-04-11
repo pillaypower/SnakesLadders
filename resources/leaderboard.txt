@@ -1,6 +1,54 @@
 
-ak
+nev
 Number of Moves:1
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+nev
+Number of Moves:2
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+nev
+Number of Moves:3
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+nev
+Number of Moves:3
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+nev
+Number of Moves:3
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+nev
+Number of Moves:3
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+nev
+Number of Moves:3
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+nev
+Number of Moves:4
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+nev
+Number of Moves:5
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 0
 
