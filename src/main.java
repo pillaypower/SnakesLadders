@@ -12,6 +12,8 @@ import java.util.Scanner;
  */
 public class main {
 
+    private static boolean turnEnding;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         leaderboard leaderboard = new leaderboard("leaderboard.txt");
@@ -57,10 +59,12 @@ public class main {
 
         User user = new User(name);
         Dice dice = new Dice();
+        
+        turnEnding = false;
 
-        while (user.getPosition() < 100) {
-            System.out.println("\n" + user.getName() + "'s Turn: ");
-            System.out.print(user.getName() + "press 'r' to roll ");
+        while (!turnEnding) {
+            System.out.println("\n" + user.getName() + "'s turn: ");
+            System.out.print(user.getName() + " press 'r' to roll ");
             String input = scanner.nextLine();
 
             if (input.equalsIgnoreCase("r")) {
@@ -76,7 +80,14 @@ public class main {
             } else {
                 System.out.println("Invalid Input");
             }
-        }
+            
+            if(user.getPosition() == 100){
+                turnEnding = true;
+            
+        } else {
+                System.out.println("Error");
+                }
+        
         System.out.println(user.getName() + " has completed the game!");
         System.out.println("GAMEOVER");
 
