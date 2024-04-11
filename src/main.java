@@ -59,7 +59,7 @@ public class main {
 
         User user = new User(name);
         Dice dice = new Dice();
-        
+
         turnEnding = false;
 
         while (!turnEnding) {
@@ -72,29 +72,30 @@ public class main {
                 System.out.println(user.getName() + " rolled a " + rollNum);
 
                 int newPosition = user.getPosition() + rollNum;
-                if (newPosition <= 100) {
+                if (newPosition < 100) {
                     user.setPosition(newPosition);
                     System.out.println(user.getName() + "'s new postion: " + user.getPosition() + "\n");
                     directsSnakeAndLadder(user, newPosition);
-                }
-            } else {
-                System.out.println("Invalid Input");
-            }
-            
-            if(user.getPosition() <= 100){
+                
+            } else if(newPosition == 100){
+                user.setPosition(newPosition);
+                System.out.println(user.getName() + " has completed the game!");
+                System.out.println("GAMEOVER");
                 turnEnding = true;
-            
+            } else {
+                System.out.println("Your roll overshot, roll again");
+            }
         } else {
-                System.out.println("Error");
-                }
+                    System.out.println("Invalid Input");
+                    }
+
+            
         
+
         leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
 
     }
-         System.out.println(user.getName() + " has completed the game!");
-        System.out.println("GAMEOVER");
     }
-
     private static void directsSnakeAndLadder(User user, int newPosition) {
         if (board.snakePosition(newPosition)) {
             System.out.print(user.getName() + " has been bit by a snake! Now moved down");
@@ -126,3 +127,4 @@ public class main {
         }
     }
 }
+
