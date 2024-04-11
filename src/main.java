@@ -30,7 +30,7 @@ public class main {
 
             switch (option) {
                 case 1:
-                    gameRunning(leaderboard);
+                    gameRunning(leaderboard, scanner);
                     break;
 
                 case 2:
@@ -50,33 +50,26 @@ public class main {
         scanner.close();
     }
 
-    private static void gameRunning(leaderboard leaderboard) {
-        Scanner scanner = new Scanner(System.in);
-
+    private static void gameRunning(leaderboard leaderboard, Scanner scanner) {
         System.out.print("Enter username: ");
         String name = scanner.nextLine();
 
         User user = new User(name);
-        
-        
-        System.out.println( user.getName() + " press 'r' to roll");
-        String input = scanner.nextLine();
-        if(!input.equalsIgnoreCase("r")){
-            System.out.print("Error");
-            return;
-        }
-        
         Dice dice = new Dice();
-
-        while (user.getPosition() < 100) {
-            int rollNum = dice.roll();
+        
+        boolean turnEnding = false;
+        
+        while(!turnEnding) {
+            System.out.print("Press 'r' to roll the dice: ");
+            String input = scanner.nextLine();
             
-            
-            int newPosition = user.getPosition() + rollNum;
+            if(input.equalsIgnoreCase("r")) {
+                int rollNum = dice.roll();
+                System.out.println(user.getName() + " rolled a " + rollNum);
+                int newPosition = user.getPosition() + rollNum;
            
             if (newPosition <= 100) {
                 user.setPosition(newPosition);
-                System.out.println(user.getName() + "rolled a: " + rollNum);
                 System.out.println(user.getName() + "'s new postion: " + user.getPosition() + "\n");
                 
                 if (board.snakePosition(user.getPosition())) {
@@ -105,6 +98,8 @@ public class main {
 
     }
 }
+}
+
 
 //    private static void displayLeaderboard(leaderboard leaderboard) {
 //        List<ScoreEntry> scores = leaderboard.getScores();

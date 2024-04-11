@@ -1,6 +1,6 @@
 
-r
-Number of Moves:28
+nev
+Number of Moves:1
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 0
 
