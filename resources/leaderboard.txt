@@ -1,6 +1,6 @@
 
-ish
-Number of Moves:30
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 2
+r
+Number of Moves:28
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
 

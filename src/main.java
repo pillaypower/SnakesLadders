@@ -50,14 +50,14 @@ public class main {
         scanner.close();
     }
 
-    private static void gameRunning(leaderboard leaderboard, Board board) {
+    private static void gameRunning(leaderboard leaderboard) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter username: ");
         String name = scanner.nextLine();
 
         User user = new User(name);
-        Dice dice = new Dice();
+        
         
         System.out.println( user.getName() + " press 'r' to roll");
         String input = scanner.nextLine();
@@ -65,15 +65,18 @@ public class main {
             System.out.print("Error");
             return;
         }
+        
+        Dice dice = new Dice();
 
         while (user.getPosition() < 100) {
             int rollNum = dice.roll();
             
-            System.out.println(user.getName() + " rolled a: " + rollNum);
+            
             int newPosition = user.getPosition() + rollNum;
            
             if (newPosition <= 100) {
                 user.setPosition(newPosition);
+                System.out.println(user.getName() + "rolled a: " + rollNum);
                 System.out.println(user.getName() + "'s new postion: " + user.getPosition() + "\n");
                 
                 if (board.snakePosition(user.getPosition())) {
