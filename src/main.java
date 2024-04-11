@@ -80,7 +80,8 @@ public class main {
             } else if(newPosition == 100){
                 user.setPosition(newPosition);
                 System.out.println(user.getName() + " has completed the game!");
-                System.out.println("GAMEOVER");
+                System.out.println("GAMEOVER \n");
+                
                 turnEnding = true;
             } else {
                 System.out.println("Your roll overshot, roll again");
