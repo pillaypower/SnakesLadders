@@ -81,7 +81,7 @@ public class main {
                 user.setPosition(newPosition);
                 System.out.println("\n GAMEOVER \n");
                 System.out.println( user.getName() + " has completed the game! \n");
-                System.out.println("Press '1' to Play Again!");
+                System.out.println("Press '1' to Play Again! \n");
                 
                 turnEnding = true;
             } else {
