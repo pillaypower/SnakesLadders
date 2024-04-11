@@ -79,7 +79,7 @@ public class leaderboard {
         }
         
    public void loadFile() {
-       scores.clear();
+
        
        try(BufferedReader reader = new BufferedReader(new FileReader("./resources/leaderboard.txt"))) {
            String blank;
@@ -92,9 +92,9 @@ public class leaderboard {
        
        } catch (FileNotFoundException ex){
            Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);
-       } catch (FileNotFoundException ex){
-           Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);
-       }
+       } catch (IOException ex) {
+            Logger.getLogger(leaderboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
        }
    }
 
