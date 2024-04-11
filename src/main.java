@@ -79,8 +79,9 @@ public class main {
                 
             } else if(newPosition == 100){
                 user.setPosition(newPosition);
-                System.out.println(user.getName() + " has completed the game!");
                 System.out.println("GAMEOVER \n");
+                System.out.println("\n" + user.getName() + " has completed the game! \n");
+                System.out.println("Press '1' to Play Again!");
                 
                 turnEnding = true;
             } else {
