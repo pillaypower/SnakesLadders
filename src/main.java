@@ -57,47 +57,54 @@ public class main {
         User user = new User(name);
         Dice dice = new Dice();
         
-        boolean turnEnding = false;
-        
-        while(!turnEnding) {
-            System.out.print("Press 'r' to roll the dice: ");
-            String input = scanner.nextLine();
+            
+            while(user.getPosition() < 100){
+                System.out.println("\n" + user.getName() + "'s Turn: ");
+                System.out.print(user.getName() + "press 'r' to roll ");
+                String input = scanner.nextLine();
+                  
             
             if(input.equalsIgnoreCase("r")) {
                 int rollNum = dice.roll();
                 System.out.println(user.getName() + " rolled a " + rollNum);
+              
                 int newPosition = user.getPosition() + rollNum;
-           
-            if (newPosition <= 100) {
+                if (newPosition <= 100) {
                 user.setPosition(newPosition);
                 System.out.println(user.getName() + "'s new postion: " + user.getPosition() + "\n");
-                
-                if (board.snakePosition(user.getPosition())) {
-                    System.out.println(user.getName() + " has been bit by a snake! Moved down");
-                    int downward = board.getSnakeDeduction(user.getPosition());
-                    user.setPosition(user.getPosition() + downward);
-                    user.snake();
-                    System.out.println(user.getName() + "'s new position: " + user.getPosition() + "\n");
-
-                } else if (board.ladderPosition(user.getPosition())) {
-                    System.out.println(user.getName() + " climbed a ladder! Moved up");
-                    int upward = board.getLadderAddition(user.getPosition());
-                    user.setPosition(user.getPosition() + upward);
-                    user.ladder();
-                    System.out.println(user.getName() + "'s new position:" + user.getPosition());
-
+                directsSnakeAndLadder(user, newPosition);
                 }
+            } else{
+                System.out.println("Invalid Input");
             }
-
-        }
-
-        System.out.println(user.getName() + " \n has completed the game!");
-        System.out.println("Game Over! Thank you for playing!");
-
-        leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
-
+            }
+            System.out.println(user.getName() + " has completed the game!");
+            System.out.println("GAMEOVER");
+            
+            leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
+               
     }
-}
+               
+    
+    private static void directsSnakeAndLadder(User user, int newPosition) {
+    if(board.snakePosition(newPosition)) {
+        System.out.print(user.getName() + " has been bit by a snake! Now moved down");
+        int moveDown = board.getSnakeDeduction(newPosition);
+        user.setPosition(newPosition + moveDown);
+        user.snake();
+        System.out.println(user.getName() + "'s new position: " + user.getPosition());
+        
+    } else if(board.ladderPosition(newPosition)) {
+        System.out.println(user.getName() + " climbed a ladder! Moved up");
+        int moveUp = board.getLadderAddition(newPosition);
+        user.setPosition(newPosition + moveUp);
+        user.ladder();
+        System.out.println(user.getName() + "'s new position: " + user.getPosition());
+    }       
+    }
+    
+    
+    
 }
 
 
