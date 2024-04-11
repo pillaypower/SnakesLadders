@@ -94,6 +94,9 @@ public class main {
         leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
 
     }
+         System.out.println(user.getName() + " has completed the game!");
+        System.out.println("GAMEOVER");
+    }
 
     private static void directsSnakeAndLadder(User user, int newPosition) {
         if (board.snakePosition(newPosition)) {
