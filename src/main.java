@@ -78,14 +78,14 @@ public class main {
                     int upward = board.getLadderAddition(user.getPosition());
                     user.setPosition(user.getPosition() + upward);
                     user.ladder();
-                    System.out.println(user.getName() + "'s new position:" + user.getPosition());
+                    System.out.println(user.getName() + "'s new position:" + user.getPosition() + "\n");
 
                 }
             }
 
         }
 
-        System.out.println(user.getName() + " \n has completed the game!");
+        System.out.println("\n" + user.getName() + "has completed the game!");
         System.out.println("Game Over! Thank you for playing!");
 
         leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
