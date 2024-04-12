@@ -129,7 +129,6 @@ public class main {
         List<ScoreEntry> scores = GameResults.getScores();
         if (!scores.isEmpty()) {
             System.out.println("\nGame Result:");
-//            System.out.println("Player Name", Moves, Snakes Bitten, Ladders Climbed");
             
             ScoreEntry lastEntry = scores.get(scores.size() - 1);
                
