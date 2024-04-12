@@ -32,19 +32,32 @@ public class User extends GameEntity {
        int rollNum = dice.roll();
        numMoves++;
        
-       int newPosition = getPosition() + rollNum;
-       setPosition(newPosition);
-       
-       if(board.snakePosition(newPosition)){
+       public void snake(){
            numSnakesBitten++;
-           int moveDown = board.getSnakeDeduction(newPosition);
-           setPosition(newPosition + moveDown);
-       } else if (board.ladderPosition(newPosition)){
-           numLaddersClimbed++;
-           int moveUp = board.getLadderAddition(newPosition);
-           setPosition(newPosition + moveUp);
+       }
+        public void ladder() {
+        numLaddersClimbed++;
+        }
+   }
+   
+   public int getSnake() {
+       return numSnakesBitten;
    }
 }
+       
+     //  int newPosition = getPosition() + rollNum;
+    //   setPosition(newPosition);
+       
+      // if(board.snakePosition(newPosition)){
+     //      numSnakesBitten++;
+        //   int moveDown = board.getSnakeDeduction(newPosition);
+      //     setPosition(newPosition + moveDown);
+    //   } else if (board.ladderPosition(newPosition)){
+  //         numLaddersClimbed++;
+      //     int moveUp = board.getLadderAddition(newPosition);
+    //       setPosition(newPosition + moveUp);
+  // }
+
        
     
   //  public int getSnakesBitten(){

@@ -7,7 +7,7 @@
  *
  * @author ishaa
  */
-public class GameEntity {
+public abstract class GameEntity {
     
     protected String name;
     protected int position;
