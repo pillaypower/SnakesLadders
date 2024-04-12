@@ -1,847 +1,258 @@
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-r
-Number of Moves:1552
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1553
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1554
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1555
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1556
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1557
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1558
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1559
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1560
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1561
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1562
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1563
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1564
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1565
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1566
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1567
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1568
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1569
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1570
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1571
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1572
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1573
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1574
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1575
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1576
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1577
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1579
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1580
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1581
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1581
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1582
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1552
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1553
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 61
-
-
-r
-Number of Moves:1555
-Number of Snakes Bitten: 93
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1557
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1558
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1559
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1560
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1561
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1562
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1563
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1564
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1565
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1566
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1567
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1568
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1569
-Number of Snakes Bitten: 94
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1571
-Number of Snakes Bitten: 95
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1572
-Number of Snakes Bitten: 95
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1573
-Number of Snakes Bitten: 95
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1574
-Number of Snakes Bitten: 95
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1575
-Number of Snakes Bitten: 95
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1576
-Number of Snakes Bitten: 95
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1577
-Number of Snakes Bitten: 95
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1579
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1580
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1581
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1582
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 62
-
-
-r
-Number of Moves:1584
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1585
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1586
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1587
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1588
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1589
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1590
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1591
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1592
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 63
-
-
-r
-Number of Moves:1594
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 64
-
-
-r
-Number of Moves:1595
-Number of Snakes Bitten: 96
-Number of Ladders Climbed: 64
-
-
-r
-Number of Moves:1597
-Number of Snakes Bitten: 97
-Number of Ladders Climbed: 64
-
-
-r
-Number of Moves:1598
-Number of Snakes Bitten: 97
-Number of Ladders Climbed: 64
-
-
-r
-Number of Moves:1599
-Number of Snakes Bitten: 97
-Number of Ladders Climbed: 64
-
-
-r
-Number of Moves:1600
-Number of Snakes Bitten: 97
-Number of Ladders Climbed: 64
-
-
-is
-Number of Moves:881
-Number of Snakes Bitten: 60
-Number of Ladders Climbed: 40
-
-
-is
-Number of Moves:883
-Number of Snakes Bitten: 60
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:885
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:886
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:887
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:888
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:889
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:890
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:891
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:892
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:893
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:894
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:895
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:896
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:897
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:898
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:899
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:900
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:901
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:902
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:903
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:904
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:905
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:906
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:906
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:906
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:907
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:907
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:907
-Number of Snakes Bitten: 61
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:909
-Number of Snakes Bitten: 62
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:910
-Number of Snakes Bitten: 62
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:910
-Number of Snakes Bitten: 62
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:912
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:913
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:914
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:915
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:915
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:915
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:916
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:916
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-
-
-is
-Number of Moves:917
-Number of Snakes Bitten: 63
-Number of Ladders Climbed: 41
-=======
->>>>>>> Stashed changes
-2
-Number of Moves: 0
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 0
-
-
-2
+hi
 Number of Moves: 1
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 2
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 0
 
 
-2
+hi
+Number of Moves: 3
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+hi
 Number of Moves: 4
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 5
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 6
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 7
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 8
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 9
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 10
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
+Number of Moves: 11
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+hi
 Number of Moves: 12
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 13
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 14
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 15
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 16
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 17
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 18
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 19
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 20
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 2
+Number of Ladders Climbed: 0
 
 
-2
+hi
+Number of Moves: 21
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+hi
 Number of Moves: 22
 Number of Snakes Bitten: 0
-Number of Ladders Climbed: 3
+Number of Ladders Climbed: 0
 
 
-2
-Number of Moves: 23
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 3
-
-
-2
+hi
 Number of Moves: 24
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 3
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
 
 
-2
-Number of Moves: 24
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 3
-
-
-2
+hi
 Number of Moves: 25
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 3
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 26
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 3
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
 
 
-2
+hi
 Number of Moves: 27
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 3
-<<<<<<< Updated upstream
-=======
->>>>>>> c0f557f801910c6cf917bf473624fef516ffdd85
->>>>>>> Stashed changes
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 28
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 29
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 30
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 31
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 32
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 33
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 34
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 35
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 36
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 37
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 38
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 38
+Number of Snakes Bitten: 1
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 40
+Number of Snakes Bitten: 2
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 41
+Number of Snakes Bitten: 2
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 43
+Number of Snakes Bitten: 3
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 44
+Number of Snakes Bitten: 3
+Number of Ladders Climbed: 0
+
+
+hi
+Number of Moves: 45
+Number of Snakes Bitten: 3
+Number of Ladders Climbed: 0
 

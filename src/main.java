@@ -16,7 +16,7 @@ public class main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        GameResults GameResult = new GameResults("record.txt");
+        GameResults GameResults = new GameResults("record.txt");
         GameResults.loadFile();
 
         boolean exit = false;
@@ -100,7 +100,7 @@ public class main {
     }
     private static void directsSnakeAndLadder(User user, int newPosition) {
         if (board.snakePosition(newPosition)) {
-            System.out.print(user.getName() + " has been bit by a snake! Now moved down");
+            System.out.print(user.getName() + " has been bit by a snake! Now moved down\n");
             int moveDown = board.getSnakeDeduction(newPosition);
             user.setPosition(newPosition + moveDown);
             user.snake();
@@ -118,15 +118,15 @@ public class main {
     private static void displayGameResults(GameResults GameResults) {
         List<ScoreEntry> scores = GameResults.getScores();
         if (!scores.isEmpty()) {
-            System.out.println("Game Result:\n");
-            System.out.println("Player Name, Moves, Snakes Bitten, Ladders Climbed");
+            System.out.println("\nGame Result:");
+//            System.out.println("Player Name", Moves, Snakes Bitten, Ladders Climbed");
             
             ScoreEntry lastEntry = scores.get(scores.size() - 1);
                
            
-           System.out.println(lastEntry.getUserName() + "," + lastEntry.getNumMoves() + "," + lastEntry.getNumSnakesBitten() + "," + lastEntry.getNumLaddersClimbed());
+           System.out.println("Player Name: " + lastEntry.getUserName() + "\n" + "Number of Moves: "+ lastEntry.getNumMoves() + "\n" + "Number Of Snakes Bitten: " + lastEntry.getNumSnakesBitten() + "\n" + "Get Number of Ladders Climbed: " + lastEntry.getNumLaddersClimbed() + "\n");
         } else {
-            System.out.println("No Previous Game Result");
+            System.out.println("No Previous Game Result\n");
         }
     }
 }
