@@ -124,7 +124,7 @@ public class main {
             ScoreEntry lastEntry = scores.get(scores.size() - 1);
                
            
-            System.out.println(lastEntry.getUserName() + "," + lastEntry.getNumMoves() + "," + lastEntry.getNumSnakesBitten() + "," + lastEntry.getNumLaddersClimbed());
+           System.out.println(lastEntry.getUserName() + "," + lastEntry.getNumMoves() + "," + lastEntry.getNumSnakesBitten() + "," + lastEntry.getNumLaddersClimbed());
         } else {
             System.out.println("Leaderboard is currently empty");
         }
