@@ -104,7 +104,7 @@ public class main {
             
         
 
-        GameResults.addScore(user.getName(), user.getNumMoves(), user.getNumSnakeBitten(), user.getNumLaddersClimbed());
+        GameResults.addScore(user.getName(), user.getNumMoves(), user.getNumSnakesBitten(), user.getNumLaddersClimbed());
 
     }
     }

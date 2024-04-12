@@ -27,7 +27,7 @@ public class User extends GameEntity {
         return numLaddersClimbed;
     }
 
-     public int getNumSnakeBitten() {
+     public int getNumSnakesBitten() {
        return numSnakesBitten;
    }
      
