@@ -121,11 +121,11 @@ public class main {
             System.out.println("Leaderboard:");
             System.out.println("Player Name, Moves, Snakes Bitten, Ladders Climbed");
             for (ScoreEntry entry : scores) {
-                System.out.println(entry.getUserName() + entry.getNumMoves() + entry.getNumSnakesBitten() + entry.getNumLaddersClimbed());
+                System.out.println(entry.getUserName() + "," + entry.getNumMoves() + "," + entry.getNumSnakesBitten() + "," + entry.getNumLaddersClimbed());
             }
 
         } else {
-            System.out.println("Leaderboard is currently empty");
+            System.out.println("Leaderboard is currently empty\n");
         }
     }
 }
