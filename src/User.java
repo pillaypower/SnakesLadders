@@ -22,12 +22,15 @@ public class User extends GameEntity {
     public int getNumMoves(){
         return numMoves;
     }
-    
+     public void setPosition(int position) {
+        this.position = position;
+        numMoves++;
+     }
    public int getNumLaddersClimbed(){
         return numLaddersClimbed;
     }
 
-     public int getNumSnakesBitten() {
+     public int getSnakesBitten() {
        return numSnakesBitten;
    }
      
@@ -74,9 +77,7 @@ public class User extends GameEntity {
    // }
     
     
-  //  public void setPosition(int position) {
-       // this.position = position;
-     //   numMoves++;
+  // 
    // }
     
    // public void snake() {
