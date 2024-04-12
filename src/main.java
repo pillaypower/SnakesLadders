@@ -16,15 +16,15 @@ public class main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        leaderboard leaderboard = new leaderboard("leaderboard.txt");
-        leaderboard.loadFile();
+        GameResults GameResult = new GameResults("record.txt");
+        GameResults.loadFile();
 
         boolean exit = false;
         System.out.println("Snakers and Ladders! (CLI Version)\n");
         while (!exit) {
             System.out.println("Please Choose an option");
             System.out.println("1. Start Game");
-            System.out.println("2. View Leaderboard");
+            System.out.println("2. View Game Results");
             System.out.println("3. Exit");
             System.out.println("\n");
 
@@ -33,11 +33,11 @@ public class main {
 
             switch (option) {
                 case 1:
-                    gameRunning(leaderboard, scanner);
+                    gameRunning(GameResults, scanner);
                     break;
 
                 case 2:
-                    displayLeaderboard(leaderboard);
+                    displayGameResults(GameResults);
                     break;
 
                 case 3:
@@ -53,7 +53,7 @@ public class main {
         scanner.close();
     }
 
-    private static void gameRunning(leaderboard leaderboard, Scanner scanner) {
+    private static void gameRunning(GameResults GameResults, Scanner scanner) {
         System.out.print("Enter username: ");
         String name = scanner.nextLine();
 
@@ -94,7 +94,7 @@ public class main {
             
         
 
-        leaderboard.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
+        GameResults.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
 
     }
     }
@@ -115,10 +115,10 @@ public class main {
         }
     }
 
-    private static void displayLeaderboard(leaderboard leaderboard) {
-        List<ScoreEntry> scores = leaderboard.getScores();
+    private static void displayGameResults(GameResults GameResults) {
+        List<ScoreEntry> scores = GameResults.getScores();
         if (!scores.isEmpty()) {
-            System.out.println("Leaderboard:\n");
+            System.out.println("Game Result:\n");
             System.out.println("Player Name, Moves, Snakes Bitten, Ladders Climbed");
             
             ScoreEntry lastEntry = scores.get(scores.size() - 1);
@@ -126,7 +126,7 @@ public class main {
            
            System.out.println(lastEntry.getUserName() + "," + lastEntry.getNumMoves() + "," + lastEntry.getNumSnakesBitten() + "," + lastEntry.getNumLaddersClimbed());
         } else {
-            System.out.println("Leaderboard is currently empty");
+            System.out.println("No Previous Game Result");
         }
     }
 }
