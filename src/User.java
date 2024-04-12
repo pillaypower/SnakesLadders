@@ -7,69 +7,70 @@
  *
  * @author nevinkishore
  */
-public class User {
-    private String name;
-    private int position;
+public class User extends GameEntity {
     private int numMoves;
     private int numSnakesBitten;
     private int numLaddersClimbed;
             
     public User(String name) {
-        this.name = name;
-        this.position = 0;
+        super(name);
         this.numMoves = 0;
         this.numLaddersClimbed = 0;
         this.numSnakesBitten = 0;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public int getPosition() {
-        return position;
     }
     
     public int getNumMoves(){
         return numMoves;
     }
     
-    public int getNumLaddersClimbed(){
+   public int getNumLaddersClimbed(){
         return numLaddersClimbed;
     }
-    
-    public int getSnakesBitten(){
-        return numSnakesBitten;
-    }
-    
-    
-    public void setPosition(int position) {
-        this.position = position;
-        numMoves++;
-    }
-    
-//    public void moveForward(int move) {
-//        position += move;
-//    }
-//    
-//    public void moveBackward(int move) {
-//        position -= move;
-//    }
-    
-    public void snake() {
-        numSnakesBitten++;
-    }
-    
-   public void ladder() {
-       numLaddersClimbed++;
-   }
    
-   public int getSnake() {
-       return numSnakesBitten;
+   @Override
+   public void move(board board, Dice dice){
+       int rollNum = dice.roll();
+       numMoves++;
+       
+       int newPosition = getPosition() + rollNum;
+       setPosition(newPosition);
+       
+       if(board.snakePosition(newPosition)){
+           numSnakesBitten++;
+           int moveDown = board.getSnakeDeduction(newPosition);
+           setPosition(newPosition + moveDown);
+       } else if (board.ladderPosition(newPosition)){
+           numLaddersClimbed++;
+           int moveUp = board.getLadderAddition(newPosition);
+           setPosition(newPosition + moveUp);
    }
+}
+       
+    
+  //  public int getSnakesBitten(){
+ //       return numSnakesBitten;
+   // }
+    
+    
+  //  public void setPosition(int position) {
+       // this.position = position;
+     //   numMoves++;
+   // }
+    
+   // public void snake() {
+      //  numSnakesBitten++;
+    //}
+    
+  // public void ladder() {
+    //   numLaddersClimbed++;
+  // }
    
-   public int getLadder() {
-       return numLaddersClimbed;
+  // public int getSnake() {
+   //    return numSnakesBitten;
+   //}
+   
+  // public int getLadder() {
+  //     return numLaddersClimbed;
    }
    
     
