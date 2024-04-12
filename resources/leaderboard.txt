@@ -1,0 +1,144 @@
+Username: we
+ Number of Moves Made: 1
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 2
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 3
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 4
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 5
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 6
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 7
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 8
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 9
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 10
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 11
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 12
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 13
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 14
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 15
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 16
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 17
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 18
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 0
+Username: we
+ Number of Moves Made: 20
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 1
+Username: we
+ Number of Moves Made: 21
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 1
+Username: we
+ Number of Moves Made: 22
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 1
+Username: we
+ Number of Moves Made: 23
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 1
+Username: we
+ Number of Moves Made: 24
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 1
+Username: we
+ Number of Moves Made: 26
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 27
+Number of Snakes Bitten by: 0
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 29
+Number of Snakes Bitten by: 1
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 30
+Number of Snakes Bitten by: 1
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 31
+Number of Snakes Bitten by: 1
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 32
+Number of Snakes Bitten by: 1
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 32
+Number of Snakes Bitten by: 1
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 32
+Number of Snakes Bitten by: 1
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 32
+Number of Snakes Bitten by: 1
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 34
+Number of Snakes Bitten by: 2
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 35
+Number of Snakes Bitten by: 2
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 36
+Number of Snakes Bitten by: 2
+Number of Ladders Climbed: 2
+Username: we
+ Number of Moves Made: 37
+Number of Snakes Bitten by: 2
+Number of Ladders Climbed: 2
