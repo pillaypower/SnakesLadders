@@ -63,6 +63,7 @@ public class main {
         scanner.close();
     }
 
+    //Core method of the game that involves the dice class and moving positions
     private static void gameRunning(GameResults GameResults, Scanner scanner) {
         System.out.print("Enter username: ");
         String name = scanner.nextLine();
@@ -100,14 +101,12 @@ public class main {
         } else {
                     System.out.println("Invalid Input");
                     }
-
-            
-        
-
         GameResults.addScore(user.getName(), user.getNumMoves(), user.getSnakesBitten(), user.getNumLaddersClimbed());
 
     }
     }
+    
+    //Method to direct the position of a user in the event that they land on a snake or a ladder
     private static void directsSnakeAndLadder(User user, int newPosition) {
         if (board.snakePosition(newPosition)) {
             System.out.print(user.getName() + " has been bit by a snake! Now moved down\n");
@@ -124,7 +123,8 @@ public class main {
             System.out.println(user.getName() + "'s new position: " + user.getPosition());
         }
     }
-
+    
+    //Method to display the game results of the last game played
     private static void displayGameResults(GameResults GameResults) {
         List<ScoreEntry> scores = GameResults.getScores();
         if (!scores.isEmpty()) {
