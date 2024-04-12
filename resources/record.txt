@@ -1,156 +1,192 @@
 
 test
-Number of Moves: 1
+Number of Moves: 0
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 0
 
 
 test
-Number of Moves: 3
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
+Number of Snakes Bitten: 0
+Number of Ladders Climbed: 0
+
+
+test
+Number of Moves: 0
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 1
 
 
 test
-Number of Moves: 4
+Number of Moves: 0
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 1
 
 
 test
-Number of Moves: 5
+Number of Moves: 0
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 1
 
 
 test
-Number of Moves: 6
+Number of Moves: 0
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 1
 
 
 test
-Number of Moves: 7
+Number of Moves: 0
 Number of Snakes Bitten: 0
 Number of Ladders Climbed: 1
-
-
-test
-Number of Moves: 8
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
-
-
-test
-Number of Moves: 9
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
-
-
-test
-Number of Moves: 9
-Number of Snakes Bitten: 0
-Number of Ladders Climbed: 1
-
-
-test
-Number of Moves: 11
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 1
-
-
-test
-Number of Moves: 12
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 1
-
-
-test
-Number of Moves: 13
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 1
-
-
-test
-Number of Moves: 13
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 1
-
-
-test
-Number of Moves: 15
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 2
-
-
-test
-Number of Moves: 16
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 2
-
-
-test
-Number of Moves: 17
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 2
-
-
-test
-Number of Moves: 18
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 2
-
-
-test
-Number of Moves: 19
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 2
-
-
-test
-Number of Moves: 20
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 2
-
-
-test
-Number of Moves: 21
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 2
-
-
-test
-Number of Moves: 23
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 3
-
-
-test
-Number of Moves: 24
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 3
-
-
-test
-Number of Moves: 24
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 3
-
-
-test
-Number of Moves: 24
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 3
-
-
-test
-Number of Moves: 25
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 3
-
-
-test
-Number of Moves: 26
-Number of Snakes Bitten: 1
-Number of Ladders Climbed: 3
 

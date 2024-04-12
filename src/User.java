@@ -26,22 +26,31 @@ public class User extends GameEntity {
    public int getNumLaddersClimbed(){
         return numLaddersClimbed;
     }
-   
+
+     public int getNumSnakeBitten() {
+       return numSnakesBitten;
+   }
+     
+
    @Override
    public void move(board board, Dice dice){
        int rollNum = dice.roll();
        numMoves++;
        
-       public void snake(){
-           numSnakesBitten++;
-       }
-        public void ladder() {
-        numLaddersClimbed++;
-        }
+      
+      if(board.snakePosition(getPosition())) {
+          snake();
    }
+      if(board.ladderPosition(getPosition())) {
+          ladder();
    
-   public int getSnake() {
-       return numSnakesBitten;
+      }
+   }
+   public void snake() {
+       numSnakesBitten++;
+   }
+   public void ladder() {
+       numLaddersClimbed++;
    }
 }
        
@@ -84,9 +93,9 @@ public class User extends GameEntity {
    
   // public int getLadder() {
   //     return numLaddersClimbed;
-   }
+//   }
    
     
-}
+//}
 
 
