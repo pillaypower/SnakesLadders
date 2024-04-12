@@ -118,14 +118,15 @@ public class main {
     private static void displayLeaderboard(leaderboard leaderboard) {
         List<ScoreEntry> scores = leaderboard.getScores();
         if (!scores.isEmpty()) {
-            System.out.println("Leaderboard:");
+            System.out.println("Leaderboard:\n");
             System.out.println("Player Name, Moves, Snakes Bitten, Ladders Climbed");
-            for (ScoreEntry entry : scores) {
-                System.out.println(entry.getUserName() + "," + entry.getNumMoves() + "," + entry.getNumSnakesBitten() + "," + entry.getNumLaddersClimbed());
-            }
-
+            
+            ScoreEntry lastEntry = scores.get(scores.size() - 1);
+               
+           
+            System.out.println(lastEntry.getUserName() + "," + lastEntry.getNumMoves() + "," + lastEntry.getNumSnakesBitten() + "," + lastEntry.getNumLaddersClimbed());
         } else {
-            System.out.println("Leaderboard is currently empty\n");
+            System.out.println("Leaderboard is currently empty");
         }
     }
 }
