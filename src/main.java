@@ -1,4 +1,5 @@
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,6 +21,7 @@ public class main {
         GameResults.loadFile();
 
         boolean exit = false;
+        
         System.out.println("Snakers and Ladders! (CLI Version)\n");
         while (!exit) {
             System.out.println("Please Choose an option");
@@ -27,11 +29,19 @@ public class main {
             System.out.println("2. View Game Results");
             System.out.println("3. Exit");
             System.out.println("\n");
+            
+            int choice;
+            try {
+                choice = scanner.nextInt();
+                scanner.nextLine();
+            } catch(InputMismatchException e) {
+                System.out.println("\nInvalid input! Please enter a number: ");
+                scanner.nextLine();
+                continue;
+            }
+           
 
-            int option = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (option) {
+            switch (choice) {
                 case 1:
                     gameRunning(GameResults, scanner);
                     break;
@@ -119,7 +129,6 @@ public class main {
         List<ScoreEntry> scores = GameResults.getScores();
         if (!scores.isEmpty()) {
             System.out.println("\nGame Result:");
-//            System.out.println("Player Name", Moves, Snakes Bitten, Ladders Climbed");
             
             ScoreEntry lastEntry = scores.get(scores.size() - 1);
                
