@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author nevinkishore
  */
-public class GameResults {
+    public class GameResults {
     private List<ScoreEntry> scores;
     private String fileName;
     
