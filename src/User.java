@@ -5,7 +5,7 @@
 
 /**
  *
- * @author nevinkishore
+ * @author nevinkishoree
  */
 public class User extends GameEntity {
     private int numMoves;
