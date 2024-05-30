@@ -4,11 +4,21 @@
  */
 package gui;
 
+import
+import
+import
+import
+
 /**
  *
  * @author nevinkishore
  */
 public class login2 extends javax.swing.JFrame {
+    
+    private JButton playButton;
+    private JButton viewLeaderboardButton;
+    private JButton exitButton;
+    private JLabel backgroundLabel;
 
     /**
      * Creates new form login2
@@ -85,7 +95,18 @@ public class login2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void initComponents(){
+        
+        jFrame1 = new javax.swing.JFrame();
+        jFrame2 = new javax.swing.JFrame();
+        jFrame3 = new javax.swing.JFrame();
+        jFrame4 = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
+        
+        playButton = new JButton("Play");
+        viewLeaderboardButton = new JButton("Leaderboard");
+        exitButton = new JButton("Exit");
+    }
     /**
      * @param args the command line arguments
      */
