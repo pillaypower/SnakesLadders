@@ -116,7 +116,14 @@ public class login2 extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 playButtonActionPerformed(e);
             }
-        })
+        });
+        
+        viewLeaderboardButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+            viewLeaderboardButtonActionPerformed(e);
+            }
+        });
     }
     /**
      * @param args the command line arguments
