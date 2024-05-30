@@ -133,7 +133,7 @@ public class main {
             ScoreEntry lastEntry = scores.get(scores.size() - 1);
                
            
-           System.out.println("Player Name: " + lastEntry.getUserName() + "\n" + "Number of Moves: "+ lastEntry.getNumMoves() + "\n" + "Number Of Snakes Bitten: " + lastEntry.getNumSnakesBitten() + "\n" + "Get Number of Ladders Climbed: " + lastEntry.getNumLaddersClimbed() + "\n");
+           System.out.println("Player Name: " + lastEntry.getUserName() + "\n" + "Number of Moves: "+ lastEntry.getNumMoves() + "\n" + "Number Of Snakes Bitten: " + lastEntry.getNumSnakesBitten() + "\n" + "Number of Ladders Climbed: " + lastEntry.getNumLaddersClimbed() + "\n");
         } else {
             System.out.println("No Previous Game Result\n");
         }
