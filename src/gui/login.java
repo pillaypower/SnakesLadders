@@ -39,10 +39,10 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Marker Felt", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel1.setText("SNAKES & LADDERS");
 
-        jButton1.setFont(new java.awt.Font("Marker Felt", 0, 13)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jButton1.setText("PLAY");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,31 +50,32 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Marker Felt", 0, 13)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jButton2.setText("VIEW LEADERBOARD");
 
-        jButton3.setFont(new java.awt.Font("Marker Felt", 0, 13)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jButton3.setText("EXIT");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 122, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(117, 117, 117))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(274, 274, 274)
-                        .addComponent(jButton1))
+                        .addComponent(jButton3))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
+                        .addGap(234, 234, 234)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(274, 274, 274)
-                        .addComponent(jButton3)))
-                .addContainerGap(190, Short.MAX_VALUE))
+                        .addGap(273, 273, 273)
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +88,7 @@ public class login extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         pack();
