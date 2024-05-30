@@ -4,10 +4,12 @@
  */
 package gui;
 
-import
-import
-import
-import
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import javax.swing.GroupLayout;
 
 /**
  *
@@ -100,16 +102,21 @@ public class login2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void initComponents(){
-        
-        jFrame1 = new javax.swing.JFrame();
-        jFrame2 = new javax.swing.JFrame();
-        jFrame3 = new javax.swing.JFrame();
-        jFrame4 = new javax.swing.JFrame();
-        jLabel1 = new javax.swing.JLabel();
+ 
         
         playButton = new JButton("Play");
         viewLeaderboardButton = new JButton("Leaderboard");
         exitButton = new JButton("Exit");
+        backgroundLabel = new JLabel();
+        
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        
+        playButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                playButtonActionPerformed(e);
+            }
+        })
     }
     /**
      * @param args the command line arguments
