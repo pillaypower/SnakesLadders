@@ -15,7 +15,8 @@ public class One extends JPanel {
     public One() {
         this.image = new ImageIcon("./resources/background4.png").getImage();
     }
-
+    
+//test
     /**
      * Draw the background of this panel.
      *
