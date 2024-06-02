@@ -29,7 +29,7 @@ public class Username extends JFrame {
 
 
         // Center Panel
-        One centerPanel = new One();
+        MainBackground centerPanel = new MainBackground();
         this.add(centerPanel, BorderLayout.CENTER);
 
         // South Panel

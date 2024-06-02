@@ -8,12 +8,12 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.*;
 
-public class One extends JPanel {
+public class MainBackground extends JPanel {
 
     public Image image;
 
-    public One() {
-        this.image = new ImageIcon("./resources/background4.png").getImage();
+    public MainBackground() {
+        this.image = new ImageIcon("./resources/background.png").getImage();
     }
     
 //test

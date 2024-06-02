@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class Two extends JFrame {
+public class Main extends JFrame {
 
     public JButton startBtn;
     public JButton exitBtn;
     public JButton leaderboardBtn;
 
-    public Two() {
+    public Main() {
         // Start button
         startBtn = new JButton("Start");
         startBtn.addActionListener(new ActionListener() {
@@ -37,12 +37,12 @@ public class Two extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Replace this with the action to show the leaderboard
-                JOptionPane.showMessageDialog(Two.this, "Showing Leaderboard");
+                JOptionPane.showMessageDialog(Main.this, "Showing Leaderboard");
             }
         });
 
         // Center Panel
-        One centerPanel = new One();
+        MainBackground centerPanel = new MainBackground();
         this.add(centerPanel, BorderLayout.CENTER);
 
         // South Panel
@@ -58,7 +58,7 @@ public class Two extends JFrame {
     }
 
     public static void main(String[] args) {
-        Two cf = new Two();
+        Main cf = new Main();
         cf.setVisible(true);
     }
 }
