@@ -28,25 +28,32 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Start = new javax.swing.JButton();
         backgroundpic = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Start.setText("Start");
+        Start.setBorderPainted(false);
+        Start.setContentAreaFilled(false);
+        Start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 210, 140, 40));
 
         backgroundpic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/background4.png"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(backgroundpic, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(backgroundpic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(backgroundpic, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 20, 467, 327));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Game Starting");
+    }//GEN-LAST:event_StartActionPerformed
 
     
     /**
@@ -86,6 +93,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Start;
     private javax.swing.JLabel backgroundpic;
     // End of variables declaration//GEN-END:variables
 }
