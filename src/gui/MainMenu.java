@@ -29,6 +29,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         Start = new javax.swing.JButton();
+        Play = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,6 +45,14 @@ public class MainMenu extends javax.swing.JFrame {
         });
         getContentPane().add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 210, 140, 40));
 
+        Play.setText("Play");
+        Play.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlayActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/Images/background4.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
@@ -54,6 +63,12 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "Game Starting");
     }//GEN-LAST:event_StartActionPerformed
+
+    private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
+        // TODO add your handling code here:
+                JOptionPane.showMessageDialog(this, "Game Starting");
+
+    }//GEN-LAST:event_PlayActionPerformed
 
     
     /**
@@ -93,6 +108,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Play;
     private javax.swing.JButton Start;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
