@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
-import javax.swing.GroupLayout;
 
 /**
  *
@@ -112,22 +111,42 @@ public class login2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
         playButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                playButtonActionPerformed(e);
+         
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playButtonActionPerformed(evt);
             }
         });
         
         viewLeaderboardButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-            viewLeaderboardButtonActionPerformed(e);
+        
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            viewLeaderboardButtonActionPerformed(evt);
             }
         });
+        
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+        
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            exitButtonActionPerformed(evt);   
+            }
+        });
+        
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/background2.png")));
     }
-    /**
-     * @param args the command line arguments
-     */
+    
+    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        JOptionPane.showMessageDialog(this, "Game Starting!");
+    }
+            
+    private void viewLeaderboardButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        JOptionPane.showMessageDialog(this, "Viewing Leaderboard: ");
+    }       
+    
+       private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {
+       
+           System.exit(0);
+    }
+            
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
