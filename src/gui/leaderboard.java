@@ -1,8 +1,10 @@
+package gui;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package gui;
+
 
 /**
  *
@@ -27,15 +29,55 @@ public class leaderboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        startbutton = new javax.swing.JButton();
+        LEADERBOARD = new javax.swing.JButton();
+        EXITBTTN = new javax.swing.JButton();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/leaderboardback.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 153, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        startbutton.setText("START");
+        startbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startbuttonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(startbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
+
+        LEADERBOARD.setText("LEADERBOARD");
+        LEADERBOARD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LEADERBOARDActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LEADERBOARD, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
+
+        EXITBTTN.setText("EXIT");
+        EXITBTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EXITBTTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EXITBTTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void startbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startbuttonActionPerformed
+        new Menu().setVisible(true);
+    dispose();  // Close the main menu
+    }//GEN-LAST:event_startbuttonActionPerformed
+
+    private void LEADERBOARDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LEADERBOARDActionPerformed
+//        JOptionPane.showMessageDialog(this, "Leaderboard not implemented yet!");
+    }//GEN-LAST:event_LEADERBOARDActionPerformed
+
+    private void EXITBTTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITBTTNActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_EXITBTTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -73,6 +115,9 @@ public class leaderboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EXITBTTN;
+    private javax.swing.JButton LEADERBOARD;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton startbutton;
     // End of variables declaration//GEN-END:variables
 }
