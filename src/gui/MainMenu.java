@@ -29,7 +29,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         Start = new javax.swing.JButton();
-        backgroundpic = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -44,8 +44,8 @@ public class MainMenu extends javax.swing.JFrame {
         });
         getContentPane().add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 210, 140, 40));
 
-        backgroundpic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/background4.png"))); // NOI18N
-        getContentPane().add(backgroundpic, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, 467, 327));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/Images/background4.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -94,6 +94,6 @@ public class MainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Start;
-    private javax.swing.JLabel backgroundpic;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
