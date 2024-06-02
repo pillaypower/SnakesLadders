@@ -33,7 +33,6 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Start.setText("Start");
         Start.setBorderPainted(false);
@@ -43,8 +42,9 @@ public class MainMenu extends javax.swing.JFrame {
                 StartActionPerformed(evt);
             }
         });
-        getContentPane().add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 210, 140, 40));
+        getContentPane().add(Start, java.awt.BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
         Play.setText("Play");
         Play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +55,10 @@ public class MainMenu extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/Images/background4.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+=======
+        backgroundpic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/background4.png"))); // NOI18N
+        getContentPane().add(backgroundpic, java.awt.BorderLayout.PAGE_START);
+>>>>>>> Stashed changes
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
