@@ -16,8 +16,9 @@ public class Two extends JFrame {
         startBtn = new JButton("Start");
         startBtn.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(Two.this, "Game Starting");
+          public void actionPerformed(ActionEvent e) {
+                Username usernameFrame = new Username();
+                usernameFrame.setVisible(true);
             }
         });
 
