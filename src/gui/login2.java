@@ -41,8 +41,9 @@ public class login2 extends javax.swing.JFrame {
         jFrame2 = new javax.swing.JFrame();
         jFrame3 = new javax.swing.JFrame();
         jFrame4 = new javax.swing.JFrame();
+        Play = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -92,14 +93,28 @@ public class login2 extends javax.swing.JFrame {
         setAutoRequestFocus(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Play.setText("Play");
+        Play.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlayActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
+
+        jButton2.setText("jButton2");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/background4.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Game Starting!");
+        
+    }//GEN-LAST:event_PlayActionPerformed
     private void initComponents(){
  
         
@@ -134,9 +149,7 @@ public class login2 extends javax.swing.JFrame {
         backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/background2.png")));
     }
     
-    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(this, "Game Starting!");
-    }
+   
             
     private void viewLeaderboardButtonActionPerformed(java.awt.event.ActionEvent evt) {
         JOptionPane.showMessageDialog(this, "Viewing Leaderboard: ");
@@ -180,7 +193,8 @@ public class login2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Play;
+    private javax.swing.JButton jButton2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
