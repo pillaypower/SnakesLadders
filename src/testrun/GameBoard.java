@@ -12,7 +12,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class GameBoard extends JFrame {
 
@@ -20,6 +23,11 @@ public class GameBoard extends JFrame {
     private JButton[] tiles = new JButton[100]; // Array to keep track of the tiles
     private int currentPosition = 0; // Start position of the player
     private JLabel positionLabel;
+
+    private Set<Integer> snakes = new HashSet<>();
+    private Set<Integer> ladders = new HashSet<>();
+    private HashMap<Integer, Integer> snakeDeduction = new HashMap<>();
+    private HashMap<Integer, Integer> ladderAddition = new HashMap<>();
 
     public GameBoard(String username) {
         this.username = username; // Store the username
@@ -31,6 +39,9 @@ public class GameBoard extends JFrame {
         setContentPane(new JLabel(new ImageIcon("./resources/background.png"))); // Replace "background.jpg" with your image path
         setLayout(new BorderLayout()); // Use BorderLayout for more flexible positioning
 
+        // Initialize snakes and ladders
+        initializeSnakesAndLadders();
+
         // Create and add tiles to the board
         JPanel boardPanel = new JPanel();
         boardPanel.setOpaque(false); // Make the panel transparent
@@ -40,19 +51,23 @@ public class GameBoard extends JFrame {
         for (int i = 0; i < 10; i++) {
             if (isEvenRow) {
                 for (int j = 0; j < 10; j++) {
-                    JButton tile = new JButton(Integer.toString(currentNumber--));
+                    JButton tile = new JButton(Integer.toString(currentNumber));
                     tile.setPreferredSize(new Dimension(35, 35)); // smaller tiles
                     tile.setEnabled(false); // Disable buttons
-                    tiles[100 - currentNumber - 1] = tile; // Store reference in array
+                    tiles[100 - currentNumber] = tile; // Store reference in array
+                    colorTile(currentNumber, tile); // Color the tile if it's a snake or ladder
                     boardPanel.add(tile); // Add buttons to the board panel
+                    currentNumber--;
                 }
             } else {
                 for (int j = 9; j >= 0; j--) {
-                    JButton tile = new JButton(Integer.toString(currentNumber--));
+                    JButton tile = new JButton(Integer.toString(currentNumber));
                     tile.setPreferredSize(new Dimension(35, 35)); // smaller tiles
                     tile.setEnabled(false); // Disable buttons
-                    tiles[100 - currentNumber - 1] = tile; // Store reference in array
+                    tiles[100 - currentNumber] = tile; // Store reference in array
+                    colorTile(currentNumber, tile); // Color the tile if it's a snake or ladder
                     boardPanel.add(tile); // Add buttons to the board panel
+                    currentNumber--;
                 }
             }
             isEvenRow = !isEvenRow;
@@ -108,6 +123,30 @@ public class GameBoard extends JFrame {
         highlightCurrentPosition();
     }
 
+    private void initializeSnakesAndLadders() {
+        // Snakes
+        snakes.add(24);
+        snakes.add(51);
+        snakes.add(75);
+        snakes.add(99);
+        
+        snakeDeduction.put(24, -10);
+        snakeDeduction.put(51, -23);
+        snakeDeduction.put(75, -20);
+        snakeDeduction.put(99, -9);
+        
+        // Ladders
+        ladders.add(9);
+        ladders.add(39);
+        ladders.add(63);
+        ladders.add(88);
+        
+        ladderAddition.put(9, 9);
+        ladderAddition.put(39, 21);
+        ladderAddition.put(63, 8);
+        ladderAddition.put(88, 4);
+    }
+
     private void rollDice() {
         Random rand = new Random();
         int roll = rand.nextInt(6) + 1; // Roll a 6-sided die
@@ -123,18 +162,40 @@ public class GameBoard extends JFrame {
 
     private void updatePosition(int newPosition) {
         tiles[currentPosition].setBackground(null); // Revert the current position's tile color
+        tiles[currentPosition].setOpaque(true); // Ensure tile is opaque to show background color
         currentPosition = newPosition;
+        checkForSnakesOrLadders();
         highlightCurrentPosition();
         positionLabel.setText("Position: " + (currentPosition + 1));
     }
 
+    private void checkForSnakesOrLadders() {
+        if (snakes.contains(currentPosition)) {
+            currentPosition += snakeDeduction.get(currentPosition);
+            JOptionPane.showMessageDialog(this, "Oh no! You landed on a snake. Moving down to position: " + (currentPosition + 1));
+        } else if (ladders.contains(currentPosition)) {
+            currentPosition += ladderAddition.get(currentPosition);
+            JOptionPane.showMessageDialog(this, "Great! You landed on a ladder. Moving up to position: " + (currentPosition + 1));
+        }
+    }
+
     private void highlightCurrentPosition() {
         tiles[currentPosition].setBackground(Color.YELLOW);
+        tiles[currentPosition].setOpaque(true); // Ensure tile is opaque to show background color
+    }
+
+    private void colorTile(int position, JButton tile) {
+        if (snakes.contains(position)) {
+            tile.setBackground(Color.RED);
+        } else if (ladders.contains(position)) {
+            tile.setBackground(Color.GREEN);
+        }
+        tile.setOpaque(true); // Ensure tile is opaque to show background color
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            GameBoard gameBoard = new GameBoard("Player1"); // Pass the username here
+            quickboard gameBoard = new quickboard("Player1"); // Pass the username here
             gameBoard.setVisible(true);
         });
     }
