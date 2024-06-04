@@ -10,6 +10,8 @@ package testrun;
  */
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GameBoard extends JFrame {
 
@@ -50,13 +52,31 @@ public class GameBoard extends JFrame {
 
         // Add the board panel to the center
         add(boardPanel, BorderLayout.CENTER);
-
+        
+        //creat panel for bottom section
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.setLayout(new BorderLayout());
+        
         // Add username label to the bottom
         JLabel usernameLabel = new JLabel("Welcome, " + username);
         usernameLabel.setOpaque(true); // Make the label opaque to show the background
         usernameLabel.setBackground(Color.WHITE); // Set the background color of the label
         usernameLabel.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
-        add(usernameLabel, BorderLayout.SOUTH);
+        add(usernameLabel, BorderLayout.CENTER);
+        
+        //exit button
+        JButton exitBtn = new JButton("Exit");
+        exitBtn.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.exit(0);
+            }
+        });
+        
+        bottomPanel.add(exitBtn, BorderLayout.EAST);
+        
+        //Add bottom panel
+        add(bottomPanel, BorderLayout.SOUTH);
 
         setVisible(true);
     }
