@@ -195,7 +195,7 @@ public class GameBoard extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            quickboard gameBoard = new quickboard("Player1"); // Pass the username here
+            GameBoard gameBoard = new GameBoard("Player1"); // Pass the username here
             gameBoard.setVisible(true);
         });
     }
