@@ -1,50 +1,47 @@
 package testrun;
 
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
 
 public class Username extends JFrame {
 
-    public JButton updateBtn;
-    public JTextField textfield;
-    public JLabel textLabel;
-
+    private JButton updateBtn;
+    private JTextField textField;
 
     public Username() {
-      // Initialize the text label
-        textLabel = new JLabel("Username will appear here");
+        setTitle("Enter Username");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(300, 150);
+        setLayout(new BorderLayout());
 
-        // Placeholder text field
-        textfield = new JTextField("Enter Username To Start Game", 20);
-         updateBtn = new JButton("Set Username");
-         updateBtn.addActionListener(new ActionListener() {
+        JLabel label = new JLabel("Enter Username:");
+        add(label, BorderLayout.NORTH);
+
+        textField = new JTextField();
+        add(textField, BorderLayout.CENTER);
+
+        updateBtn = new JButton("Set Username");
+        updateBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textLabel.setText(textfield.getText().trim());
+                String username = textField.getText().trim();
+                if (!username.isEmpty()) {
+                    dispose(); // Close the Username window
+                    // Pass the username to the GameBoard
+                    SwingUtilities.invokeLater(() -> new GameBoard(username));
+                } else {
+                    JOptionPane.showMessageDialog(Username.this, "Please enter a valid username.");
+                }
             }
-            
         });
+        add(updateBtn, BorderLayout.SOUTH);
 
-
-        // Center Panel
-        MainBackground centerPanel = new MainBackground();
-        this.add(centerPanel, BorderLayout.CENTER);
-
-        // South Panel
-        JPanel southPanel = new JPanel();
-        southPanel.add(this.textfield);
-        southPanel.add(updateBtn);
-        this.add(southPanel, BorderLayout.SOUTH);
-
-        this.setSize(400, 400);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     public static void main(String[] args) {
-        Username cf = new Username();
-        cf.setVisible(true);
+        SwingUtilities.invokeLater(Username::new);
     }
 }

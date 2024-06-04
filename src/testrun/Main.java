@@ -52,7 +52,7 @@ public class Main extends JFrame {
         southPanel.add(exitBtn);
         this.add(southPanel, BorderLayout.SOUTH);
 
-        this.setSize(400, 400);
+        this.setSize(700, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
