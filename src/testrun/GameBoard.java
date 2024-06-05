@@ -121,12 +121,12 @@ public class GameBoard extends JFrame {
         snakes.add(24);
         snakes.add(51);
         snakes.add(75);
-        snakes.add(99);
+      
 
         snakeDeduction.put(24, -10);
         snakeDeduction.put(51, -23);
         snakeDeduction.put(75, -20);
-        snakeDeduction.put(99, -9);
+        
 
         // Ladders
         ladders.add(9);
@@ -142,37 +142,46 @@ public class GameBoard extends JFrame {
 
     private void rollDice() {
         Random rand = new Random();
-        int roll = rand.nextInt(6) + 1; // Roll a 6-sided die
-        int newPosition = currentPosition + roll;
-
-        if (newPosition < 100) {
-            updatePosition(newPosition);
-        } else if (newPosition == 100) {
-            updatePosition(newPosition);
-            JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders!");
-        }
+        int roll;
+        do {
+            roll = rand.nextInt(6) + 1; // Roll a 6-sided die
+            int newPosition = currentPosition + roll;
+            if (newPosition <= 100) {
+                updatePosition(newPosition);
+                if (newPosition == 99) {
+                    JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders!");
+                }
+                break;
+            } else {
+                JOptionPane.showMessageDialog(this, "You rolled too high! You need to roll " + (1 - currentPosition) + " to win. Roll again.");
+            }
+        } while (true);
     }
 
     private void updatePosition(int newPosition) {
         tiles[currentPosition].setBackground(null); // Revert the current position's tile color
+        colorTile(currentPosition + 1, tiles[currentPosition]); // Maintain the snake/ladder color
         tiles[currentPosition].setOpaque(true); // Ensure tile is opaque to show background color
         currentPosition = newPosition;
-        checkForSnakesOrLadders();
         highlightCurrentPosition();
+        checkForSnakesOrLadders(); // Move after checking for snakes or ladders
         positionLabel.setText("Position: " + (currentPosition + 1));
-
-        if (currentPosition == 99) {
-            JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders!");
-        }
     }
 
     private void checkForSnakesOrLadders() {
-        if (snakes.contains(currentPosition)) {
-            currentPosition += snakeDeduction.get(currentPosition);
-            JOptionPane.showMessageDialog(this, "Oh no! You landed on a snake. Moving down to position: " + (currentPosition + 1));
-        } else if (ladders.contains(currentPosition)) {
-            currentPosition += ladderAddition.get(currentPosition);
-            JOptionPane.showMessageDialog(this, "Great! You landed on a ladder. Moving up to position: " + (currentPosition + 1));
+        boolean moved = false;
+        while (snakes.contains(currentPosition) || ladders.contains(currentPosition)) {
+            if (snakes.contains(currentPosition)) {
+                currentPosition += snakeDeduction.get(currentPosition);
+                JOptionPane.showMessageDialog(this, "Oh no! You landed on a snake. Moving down to position: " + (currentPosition + 1));
+            } else if (ladders.contains(currentPosition)) {
+                currentPosition += ladderAddition.get(currentPosition);
+                JOptionPane.showMessageDialog(this, "Great! You landed on a ladder. Moving up to position: " + (currentPosition + 1));
+            }
+            moved = true;
+        }
+        if (moved) {
+            highlightCurrentPosition();
         }
     }
 
@@ -182,9 +191,9 @@ public class GameBoard extends JFrame {
     }
 
     private void colorTile(int position, JButton tile) {
-        if (snakes.contains(position)) {
+        if (snakes.contains(position - 1)) {
             tile.setBackground(Color.RED);
-        } else if (ladders.contains(position)) {
+        } else if (ladders.contains(position - 1)) {
             tile.setBackground(Color.GREEN);
         }
         tile.setOpaque(true); // Ensure tile is opaque to show background color
