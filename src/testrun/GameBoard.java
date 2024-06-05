@@ -160,6 +160,10 @@ public class GameBoard extends JFrame {
         checkForSnakesOrLadders();
         highlightCurrentPosition();
         positionLabel.setText("Position: " + (currentPosition + 1));
+
+        if (currentPosition == 99) {
+            JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders!");
+        }
     }
 
     private void checkForSnakesOrLadders() {
