@@ -5,7 +5,6 @@
 package testrun;
 
 import javax.swing.*;
-import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +19,8 @@ public class Leaderboard {
         return DriverManager.getConnection(URL, USER_NAME, PASSWORD);
     }
 
-    private static void createTableIfNotExists() {
-        String createTableSQL = "CREATE TABLE GameStats (" +
+    public static void createTableIfNotExists() {
+        String createTableSQL = "CREATE TABLE IF NOT EXISTS GameStats (" +
                 "username VARCHAR(255), " +
                 "numberOfMoves INT, " +
                 "snakesBitten INT, " +
@@ -30,10 +29,7 @@ public class Leaderboard {
              Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(createTableSQL);
         } catch (SQLException e) {
-            // If the table already exists, do nothing
-            if (!e.getSQLState().equals("X0Y32")) {
-                e.printStackTrace();
-            }
+            e.printStackTrace();
         }
     }
 
@@ -71,23 +67,19 @@ public class Leaderboard {
     }
 
     public static void main(String[] args) {
-        createTableIfNotExists();
-        List<String> topPlayers = readLeaderboard();
+        SwingUtilities.invokeLater(() -> {
+            createTableIfNotExists();
+            List<String> topPlayers = readLeaderboard();
 
-        // Create the GUI
-        JFrame frame = new JFrame("Leaderboard");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+            JTextArea textArea = new JTextArea(10, 40);
+            textArea.setEditable(false);
+            textArea.append("Top 3 Players with the Least Moves:\n");
 
-        JTextArea textArea = new JTextArea();
-        textArea.setEditable(false);
-        textArea.append("Top 3 Players with the Least Moves:\n");
+            for (String player : topPlayers) {
+                textArea.append(player + "\n");
+            }
 
-        for (String player : topPlayers) {
-            textArea.append(player + "\n");
-        }
-
-        frame.add(new JScrollPane(textArea));
-        frame.setVisible(true);
+            JOptionPane.showMessageDialog(null, new JScrollPane(textArea), "Leaderboard", JOptionPane.INFORMATION_MESSAGE);
+        });
     }
 }
