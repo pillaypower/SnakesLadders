@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package testrun;
 
 import javax.swing.*;
@@ -17,7 +13,7 @@ public class GameBoard extends JFrame {
 
     private String username;
     private JButton[] tiles = new JButton[100]; // Array to keep track of the tiles
-    private int currentPosition = 0; // Start position of the player
+    private int currentPosition = 0; // Start position of the player (0-based index)
     private JLabel positionLabel;
 
     private Set<Integer> snakes = new HashSet<>();
@@ -85,7 +81,10 @@ public class GameBoard extends JFrame {
         exitBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                // Return to main menu
+                dispose();
+                Main mainMenu = new Main();
+                mainMenu.setVisible(true);
             }
         });
         bottomPanel.add(exitBtn, BorderLayout.EAST);
@@ -121,12 +120,10 @@ public class GameBoard extends JFrame {
         snakes.add(24);
         snakes.add(51);
         snakes.add(75);
-      
 
         snakeDeduction.put(24, -10);
         snakeDeduction.put(51, -23);
         snakeDeduction.put(75, -20);
-        
 
         // Ladders
         ladders.add(9);
@@ -142,20 +139,17 @@ public class GameBoard extends JFrame {
 
     private void rollDice() {
         Random rand = new Random();
-        int roll;
-        do {
-            roll = rand.nextInt(6) + 1; // Roll a 6-sided die
-            int newPosition = currentPosition + roll;
-            if (newPosition <= 100) {
-                updatePosition(newPosition);
-                if (newPosition == 99) {
-                    JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders!");
-                }
-                break;
-            } else {
-                JOptionPane.showMessageDialog(this, "You rolled too high! You need to roll " + (1 - currentPosition) + " to win. Roll again.");
+        int roll = rand.nextInt(6) + 1; // Roll a 6-sided die
+        int newPosition = currentPosition + roll;
+
+        if (newPosition > 99) {
+            JOptionPane.showMessageDialog(this, "You rolled too high! You need to roll " + (99 - currentPosition) + " or less to win. Roll again.");
+        } else {
+            updatePosition(newPosition);
+            if (currentPosition == 99) {
+                JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders!");
             }
-        } while (true);
+        }
     }
 
     private void updatePosition(int newPosition) {
