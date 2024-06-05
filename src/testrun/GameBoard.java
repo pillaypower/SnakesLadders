@@ -77,16 +77,19 @@ public class GameBoard extends JFrame {
         bottomPanel.add(rollButton, BorderLayout.WEST);
 
         // Create exit button
-        JButton exitBtn = new JButton("Exit");
-        exitBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Return to main menu
-                dispose();
-                Main mainMenu = new Main();
-                mainMenu.setVisible(true);
-            }
-        });
+       // Inside GameBoard class
+JButton exitBtn = new JButton("Exit");
+exitBtn.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        dispose(); // Dispose of the current GameBoard window
+        Main mainMenu = new Main(); // Create a new instance of the Main menu
+        mainMenu.setVisible(true); // Display the Main menu window
+    }
+});
+
+        
+        
         bottomPanel.add(exitBtn, BorderLayout.EAST);
 
         // Create position label
