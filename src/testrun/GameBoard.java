@@ -4,10 +4,6 @@
  */
 package testrun;
 
-/**
- *
- * @author nevinkishore
- */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,28 +42,15 @@ public class GameBoard extends JFrame {
         JPanel boardPanel = new JPanel();
         boardPanel.setOpaque(false); // Make the panel transparent
         boardPanel.setLayout(new GridLayout(10, 10)); // 10x10 grid layout for the board
-        int currentNumber = 100;
         boolean isEvenRow = true;
-        for (int i = 0; i < 10; i++) {
+        for (int row = 9; row >= 0; row--) {
             if (isEvenRow) {
-                for (int j = 0; j < 10; j++) {
-                    JButton tile = new JButton(Integer.toString(currentNumber));
-                    tile.setPreferredSize(new Dimension(35, 35)); // smaller tiles
-                    tile.setEnabled(false); // Disable buttons
-                    tiles[100 - currentNumber] = tile; // Store reference in array
-                    colorTile(currentNumber, tile); // Color the tile if it's a snake or ladder
-                    boardPanel.add(tile); // Add buttons to the board panel
-                    currentNumber--;
+                for (int col = 0; col < 10; col++) {
+                    addTileToBoard(boardPanel, row, col);
                 }
             } else {
-                for (int j = 9; j >= 0; j--) {
-                    JButton tile = new JButton(Integer.toString(currentNumber));
-                    tile.setPreferredSize(new Dimension(35, 35)); // smaller tiles
-                    tile.setEnabled(false); // Disable buttons
-                    tiles[100 - currentNumber] = tile; // Store reference in array
-                    colorTile(currentNumber, tile); // Color the tile if it's a snake or ladder
-                    boardPanel.add(tile); // Add buttons to the board panel
-                    currentNumber--;
+                for (int col = 9; col >= 0; col--) {
+                    addTileToBoard(boardPanel, row, col);
                 }
             }
             isEvenRow = !isEvenRow;
@@ -123,24 +106,34 @@ public class GameBoard extends JFrame {
         highlightCurrentPosition();
     }
 
+    private void addTileToBoard(JPanel boardPanel, int row, int col) {
+        int tileNumber = row * 10 + col + 1;
+        JButton tile = new JButton(Integer.toString(tileNumber));
+        tile.setPreferredSize(new Dimension(35, 35)); // smaller tiles
+        tile.setEnabled(false); // Disable buttons
+        tiles[tileNumber - 1] = tile; // Store reference in array
+        colorTile(tileNumber, tile); // Color the tile if it's a snake or ladder
+        boardPanel.add(tile); // Add buttons to the board panel
+    }
+
     private void initializeSnakesAndLadders() {
         // Snakes
         snakes.add(24);
         snakes.add(51);
         snakes.add(75);
         snakes.add(99);
-        
+
         snakeDeduction.put(24, -10);
         snakeDeduction.put(51, -23);
         snakeDeduction.put(75, -20);
         snakeDeduction.put(99, -9);
-        
+
         // Ladders
         ladders.add(9);
         ladders.add(39);
         ladders.add(63);
         ladders.add(88);
-        
+
         ladderAddition.put(9, 9);
         ladderAddition.put(39, 21);
         ladderAddition.put(63, 8);
