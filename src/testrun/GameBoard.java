@@ -147,7 +147,7 @@ public class GameBoard extends JFrame {
         } else {
             updatePosition(newPosition);
             if (currentPosition == 99) {
-                JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders!");
+                JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders! \n Click Leaderbord to view your score!");
             }
         }
     }
