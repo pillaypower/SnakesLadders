@@ -13,7 +13,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class Leaderboard {
-    private static final String DB_URL = "jdbc:derby:LeaderboardDB;create=true";
+    private static final String DB_URL = "jdbc:derby://localhost:1527/Leader_boardDB;create=true";
     private static final String USER = "pdc";
     private static final String PASSWORD = "pdc";
 
