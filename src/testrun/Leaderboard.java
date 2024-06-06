@@ -4,42 +4,72 @@
  */
 package testrun;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class Leaderboard {
+    private static final String DB_URL = "jdbc:derby:LeaderboardDB;create=true";
+    private static final String USER = "pdc";
+    private static final String PASSWORD = "pdc";
 
-    public static void updateUserStats(String username, int numberOfMoves, int snakesBitten, int laddersClimbed) {
-        String insertSQL = "INSERT INTO GameStatistics (username, numberOfMoves, snakesBitten, laddersClimbed) VALUES (?, ?, ?, ?)";
-        try (Connection conn = DBManager.connect();
-             PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
-            pstmt.setString(1, username);
-            pstmt.setInt(2, numberOfMoves);
-            pstmt.setInt(3, snakesBitten);
-            pstmt.setInt(4, laddersClimbed);
-            pstmt.executeUpdate();
+    public static void main(String[] args) {
+        try (Connection conn = getConnection()) {
+            if (conn != null) {
+                System.out.println("Connected to the database.");
+                createTablesIfNotExist(conn);
+            }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error connecting to database: " + e.getMessage());
         }
     }
 
-    public static List<String> readLeaderboard() {
-        List<String> leaderboard = new ArrayList<>();
-        String selectSQL = "SELECT username, numberOfMoves, snakesBitten, laddersClimbed FROM GameStatistics";
-        try (Connection conn = DBManager.connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(selectSQL)) {
-            while (rs.next()) {
-                String entry = "Username: " + rs.getString("username") +
-                        ", Moves: " + rs.getInt("numberOfMoves") +
-                        ", Snakes Bitten: " + rs.getInt("snakesBitten") +
-                        ", Ladders Climbed: " + rs.getInt("laddersClimbed");
-                leaderboard.add(entry);
+    public static Connection getConnection() {
+        try {
+            return DriverManager.getConnection(DB_URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error connecting to database: " + e.getMessage(),
+                    "Database Connection Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+
+    private static void createTablesIfNotExist(Connection conn) {
+        try {
+            if (!doesTableExist(conn, "GameStatistics")) {
+                createGameStatisticsTable(conn);
+            } else {
+                System.out.println("GameStatistics table already exists.");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error checking/creating tables: " + e.getMessage());
         }
-        return leaderboard;
+    }
+
+    private static boolean doesTableExist(Connection conn, String tableName) throws SQLException {
+        DatabaseMetaData dbMetaData = conn.getMetaData();
+        try (ResultSet rs = dbMetaData.getTables(null, null, tableName.toUpperCase(), null)) {
+            return rs.next();
+        }
+    }
+
+    private static void createGameStatisticsTable(Connection conn) {
+        String createGameStatisticsTable = "CREATE TABLE GameStatistics (" +
+                                           "id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
+                                           "username VARCHAR(255) NOT NULL," +
+                                           "numberOfMoves INT," +
+                                           "snakesBitten INT," +
+                                           "laddersClimbed INT)";
+
+        try (Statement stmt = conn.createStatement()) {
+            stmt.execute(createGameStatisticsTable);
+            System.out.println("GameStatistics table created successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error creating GameStatistics table: " + e.getMessage());
+        }
     }
 }
