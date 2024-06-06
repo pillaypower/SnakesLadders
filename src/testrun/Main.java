@@ -12,7 +12,7 @@ public class Main extends JFrame {
     public JButton leaderboardBtn;
 
     public Main() {
-        // Start button
+        // start button
         startBtn = new JButton("Start");
         startBtn.addActionListener(new ActionListener() {
             @Override
@@ -22,7 +22,7 @@ public class Main extends JFrame {
             }
         });
 
-        // Exit button
+        // exit button
         exitBtn = new JButton("Exit");
         exitBtn.addActionListener(new ActionListener() {
             @Override
@@ -31,7 +31,7 @@ public class Main extends JFrame {
             }
         });
 
-        // Leaderboard button
+        // leaderboard button
         leaderboardBtn = new JButton("Leaderboard");
         leaderboardBtn.addActionListener(new ActionListener() {
             @Override
@@ -42,11 +42,9 @@ public class Main extends JFrame {
             }
         });
 
-        // Center Panel
+        // stuff for background
         MainBackground centerPanel = new MainBackground();
         this.add(centerPanel, BorderLayout.CENTER);
-
-        // South Panel
         JPanel southPanel = new JPanel();
         southPanel.add(startBtn);
         southPanel.add(leaderboardBtn);
