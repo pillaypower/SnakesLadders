@@ -21,7 +21,7 @@ public class GameBoard extends JFrame {
     private Set<Integer> ladders = new HashSet<>();
     private HashMap<Integer, Integer> snakeDeduction = new HashMap<>();
     private HashMap<Integer, Integer> ladderAddition = new HashMap<>();
-    
+
     private int numberOfMoves = 0;
     private int snakesBitten = 0;
     private int laddersClimbed = 0;
@@ -33,7 +33,7 @@ public class GameBoard extends JFrame {
         setSize(700, 400);
 
         // Set background image of the frame
-        setContentPane(new JLabel(new ImageIcon("./resources/background.png"))); // Replace "background.jpg" with your image path
+        setContentPane(new JLabel(new ImageIcon("./resources/background.png"))); // Replace "background.png" with your image path
         setLayout(new BorderLayout()); // Use BorderLayout for more flexible positioning
 
         // Initialize snakes and ladders
@@ -91,7 +91,7 @@ public class GameBoard extends JFrame {
                 mainMenu.setVisible(true); // Display the Main menu window
             }
         });
-        
+
         bottomPanel.add(exitBtn, BorderLayout.EAST);
 
         // Create position label
@@ -160,109 +160,66 @@ public class GameBoard extends JFrame {
     }
 
     private void saveGameResult() {
-    Connection conn = null;
-    PreparedStatement pstmt = null;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
 
-    try {
-        // Connect to the database
-        String dbURL = "jdbc:derby://localhost:1527/Leader_boardDB;user=myUsername;password=myPassword";
-        conn = DriverManager.getConnection(dbURL);
-
-        // Verify connection
-        if (conn != null) {
-            System.out.println("Connected to the database successfully.");
-        } else {
-            System.err.println("Failed to make connection to the database.");
-            return;
-        }
-
-        // Prepare the SQL statement
-        String sql = "INSERT INTO GameStatistics (username, numberOfMoves, snakesBitten, laddersClimbed) VALUES (?, ?, ?, ?)";
-        pstmt = conn.prepareStatement(sql);
-
-        // Set the parameters
-        pstmt.setString(1, username);
-        pstmt.setInt(2, numberOfMoves);
-        pstmt.setInt(3, snakesBitten);
-        pstmt.setInt(4, laddersClimbed);
-
-        // Execute the statement
-        int rowsInserted = pstmt.executeUpdate();
-        if (rowsInserted > 0) {
-            System.out.println("A new game result was inserted successfully.");
-        } else {
-            System.err.println("No rows were inserted into the database.");
-        }
-    } catch (SQLException e) {
-        // Print detailed error information
-        System.err.println("SQLException: " + e.getMessage());
-        System.err.println("SQLState: " + e.getSQLState());
-        System.err.println("VendorError: " + e.getErrorCode());
-        e.printStackTrace();
-    } finally {
-        // Close resources
         try {
-            if (pstmt != null) {
-                pstmt.close();
+            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/Leader_boardDB", "pdc", "pdc");
+            pstmt = conn.prepareStatement("INSERT INTO GameStatistics (USERNAME, NUMBEROFMOVES, SNAKESBITTEN, LADDERSCLIMBED) VALUES (?, ?, ?, ?)");
+            pstmt.setString(1, username);
+            pstmt.setInt(2, numberOfMoves);
+            pstmt.setInt(3, snakesBitten);
+            pstmt.setInt(4, laddersClimbed);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            if (conn != null) {
-                conn.close();
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         }
     }
-}
-
-
 
     private void updatePosition(int newPosition) {
         tiles[currentPosition].setBackground(null); // Revert the current position's tile color
-        colorTile(currentPosition + 1, tiles[currentPosition]); // Maintain the snake/ladder color
-        tiles[currentPosition].setOpaque(true); // Ensure tile is opaque to show background color
+        colorTile(currentPosition + 1, tiles[currentPosition]); // Revert the color of the tile
         currentPosition = newPosition;
         highlightCurrentPosition();
-        checkForSnakesOrLadders(); // Move after checking for snakes or ladders
-        positionLabel.setText("Position: " + (currentPosition + 1));
-    }
-
-    private void checkForSnakesOrLadders() {
-        boolean moved = false;
-        while (snakes.contains(currentPosition) || ladders.contains(currentPosition)) {
-            if (snakes.contains(currentPosition)) {
-                currentPosition += snakeDeduction.get(currentPosition);
-                snakesBitten++;
-                JOptionPane.showMessageDialog(this, "Oh no! You landed on a snake. Moving down to position: " + (currentPosition + 1));
-            } else if (ladders.contains(currentPosition)) {
-                currentPosition += ladderAddition.get(currentPosition);
-                laddersClimbed++;
-                JOptionPane.showMessageDialog(this, "Great! You landed on a ladder. Moving up to position: " + (currentPosition + 1));
-            }
-            moved = true;
+        if (snakes.contains(newPosition + 1)) {
+            newPosition += snakeDeduction.get(newPosition + 1);
+            snakesBitten++;
+            JOptionPane.showMessageDialog(this, "Oops, " + username + "! You landed on a snake and moved back to position " + (newPosition + 1) + ".");
+        } else if (ladders.contains(newPosition + 1)) {
+            newPosition += ladderAddition.get(newPosition + 1);
+            laddersClimbed++;
+            JOptionPane.showMessageDialog(this, "Great, " + username + "! You climbed a ladder and moved forward to position " + (newPosition + 1) + ".");
         }
-        if (moved) {
-            highlightCurrentPosition();
-        }
+        highlightCurrentPosition();
     }
 
     private void highlightCurrentPosition() {
         tiles[currentPosition].setBackground(Color.YELLOW);
-        tiles[currentPosition].setOpaque(true); // Ensure tile is opaque to show background color
+        positionLabel.setText("Position: " + (currentPosition + 1));
     }
 
-    private void colorTile(int position, JButton tile) {
-        if (snakes.contains(position - 1)) {
+    private void colorTile(int tileNumber, JButton tile) {
+        if (snakes.contains(tileNumber)) {
             tile.setBackground(Color.RED);
-        } else if (ladders.contains(position - 1)) {
+        } else if (ladders.contains(tileNumber)) {
             tile.setBackground(Color.GREEN);
+        } else {
+            tile.setBackground(null);
         }
-        tile.setOpaque(true); // Ensure tile is opaque to show background color
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            GameBoard gameBoard = new GameBoard("Player1"); // Pass the username here
-            gameBoard.setVisible(true);
-        });
+        new GameBoard("testUser");
     }
 }
