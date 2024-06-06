@@ -1,9 +1,9 @@
 package testrun;
 
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
 
 public class Main extends JFrame {
 
@@ -16,7 +16,7 @@ public class Main extends JFrame {
         startBtn = new JButton("Start");
         startBtn.addActionListener(new ActionListener() {
             @Override
-          public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 Username usernameFrame = new Username();
                 usernameFrame.setVisible(true);
             }
@@ -36,8 +36,9 @@ public class Main extends JFrame {
         leaderboardBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Replace this with the action to show the leaderboard
-                JOptionPane.showMessageDialog(Main.this, "Showing Leaderboard");
+                // Display the Leaderboard GUI
+                Leaderboard leaderboardFrame = new Leaderboard();
+                leaderboardFrame.setVisible(true);
             }
         });
 

@@ -4,72 +4,60 @@
  */
 package testrun;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.awt.*;
+import java.sql.*;
 
-public class Leaderboard {
-    private static final String DB_URL = "jdbc:derby:LeaderboardDB;create=true";
-    private static final String USER = "pdc";
-    private static final String PASSWORD = "pdc";
+public class Leaderboard extends JFrame {
 
-    public static void main(String[] args) {
-        try (Connection conn = getConnection()) {
-            if (conn != null) {
-                System.out.println("Connected to the database.");
-                createTablesIfNotExist(conn);
-            }
-        } catch (SQLException e) {
-            System.out.println("Error connecting to database: " + e.getMessage());
-        }
-    }
+    public Leaderboard() {
+        setTitle("Leaderboard");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Close only this window when closed
 
-    public static Connection getConnection() {
+        // Create panel for leaderboard content
+        JPanel leaderboardPanel = new JPanel();
+        leaderboardPanel.setLayout(new BorderLayout());
+
+        // Example content: Display top 3 scores
+        JLabel headerLabel = new JLabel("Top 3 Scores");
+        leaderboardPanel.add(headerLabel, BorderLayout.NORTH);
+
+        JTextArea scoresArea = new JTextArea();
+        scoresArea.setEditable(false); // Make it non-editable
+
+        // Fetch data from the database and append it to the JTextArea
         try {
-            return DriverManager.getConnection(DB_URL, USER, PASSWORD);
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error connecting to database: " + e.getMessage(),
-                    "Database Connection Error", JOptionPane.ERROR_MESSAGE);
-            return null;
-        }
-    }
-
-    private static void createTablesIfNotExist(Connection conn) {
-        try {
-            if (!doesTableExist(conn, "GameStatistics")) {
-                createGameStatisticsTable(conn);
-            } else {
-                System.out.println("GameStatistics table already exists.");
+            Connection conn = DriverManager.getConnection("jdbc:derby:LeaderboardDB");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM GameStatistics ORDER BY numberOfMoves ASC FETCH FIRST 3 ROWS ONLY"); // Change the query as needed
+            
+            int rank = 1;
+            while (rs.next()) {
+                String username = rs.getString("username");
+                int moves = rs.getInt("numberOfMoves");
+                scoresArea.append(rank + ". " + username + " - Moves: " + moves + "\n");
+                rank++;
             }
+
+            rs.close();
+            stmt.close();
+            conn.close();
         } catch (SQLException e) {
-            System.out.println("Error checking/creating tables: " + e.getMessage());
+            e.printStackTrace();
         }
+
+        JScrollPane scrollPane = new JScrollPane(scoresArea);
+        leaderboardPanel.add(scrollPane, BorderLayout.CENTER);
+
+        // Add panel to the frame
+        add(leaderboardPanel);
+
+        setLocationRelativeTo(null); // Center the frame on the screen
     }
 
-    private static boolean doesTableExist(Connection conn, String tableName) throws SQLException {
-        DatabaseMetaData dbMetaData = conn.getMetaData();
-        try (ResultSet rs = dbMetaData.getTables(null, null, tableName.toUpperCase(), null)) {
-            return rs.next();
-        }
-    }
-
-    private static void createGameStatisticsTable(Connection conn) {
-        String createGameStatisticsTable = "CREATE TABLE GameStatistics (" +
-                                           "id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
-                                           "username VARCHAR(255) NOT NULL," +
-                                           "numberOfMoves INT," +
-                                           "snakesBitten INT," +
-                                           "laddersClimbed INT)";
-
-        try (Statement stmt = conn.createStatement()) {
-            stmt.execute(createGameStatisticsTable);
-            System.out.println("GameStatistics table created successfully.");
-        } catch (SQLException e) {
-            System.out.println("Error creating GameStatistics table: " + e.getMessage());
-        }
+    // Method to set visibility of the leaderboard
+    public void display() {
+        setVisible(true);
     }
 }
