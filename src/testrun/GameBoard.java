@@ -162,29 +162,30 @@ public class GameBoard extends JFrame {
     private void saveGameResult() {
     Connection conn = null;
     PreparedStatement pstmt = null;
-    
+
     try {
         // Connect to the database
-        conn = DriverManager.getConnection("jdbc:derby://localhost:1527/Leader_boardDB");
-        
-        // Verify connectionbvnbmvn
+        String dbURL = "jdbc:derby://localhost:1527/Leader_boardDB;user=myUsername;password=myPassword";
+        conn = DriverManager.getConnection(dbURL);
+
+        // Verify connection
         if (conn != null) {
             System.out.println("Connected to the database successfully.");
         } else {
             System.err.println("Failed to make connection to the database.");
             return;
         }
-        
+
         // Prepare the SQL statement
         String sql = "INSERT INTO GameStatistics (username, numberOfMoves, snakesBitten, laddersClimbed) VALUES (?, ?, ?, ?)";
         pstmt = conn.prepareStatement(sql);
-        
+
         // Set the parameters
         pstmt.setString(1, username);
         pstmt.setInt(2, numberOfMoves);
         pstmt.setInt(3, snakesBitten);
         pstmt.setInt(4, laddersClimbed);
-        
+
         // Execute the statement
         int rowsInserted = pstmt.executeUpdate();
         if (rowsInserted > 0) {
@@ -212,6 +213,7 @@ public class GameBoard extends JFrame {
         }
     }
 }
+
 
 
     private void updatePosition(int newPosition) {
