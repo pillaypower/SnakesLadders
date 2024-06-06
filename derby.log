@@ -1,4 +1,4 @@
-Thu Jun 06 21:44:03 GMT+12:00 2024 Thread[AWT-EventQueue-0,6,main] Cleanup action starting
+Thu Jun 06 21:52:19 GMT+12:00 2024 Thread[AWT-EventQueue-0,6,main] Cleanup action starting
 java.sql.SQLException: Database 'LeaderboardDB' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
