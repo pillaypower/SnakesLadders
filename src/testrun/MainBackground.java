@@ -15,11 +15,8 @@ public class MainBackground extends JPanel {
     public MainBackground() {
         this.image = new ImageIcon("./resources/background.png").getImage();
     }
-    
-//test
+   //test 
     /**
-     * Draw the background of this panel.
-     *
      * @param g
      */
     @Override

@@ -13,8 +13,8 @@ import java.util.Set;
 public class GameBoard extends JFrame {
 
     private String username;
-    private JButton[] tiles = new JButton[100]; // Array to keep track of the tiles
-    private int currentPosition = 0; // Start position of the player (0-based index)
+    private JButton[] tiles = new JButton[100]; 
+    private int currentPosition = 0; 
     private JLabel positionLabel;
 
     private Set<Integer> snakes = new HashSet<>();
@@ -27,22 +27,21 @@ public class GameBoard extends JFrame {
     private int laddersClimbed = 0;
 
     public GameBoard(String username) {
-        this.username = username; // Store the username
+        this.username = username; 
         setTitle("Snakes and Ladders");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(700, 400);
 
-        // Set background image of the frame
-        setContentPane(new JLabel(new ImageIcon("./resources/background.png"))); // Replace "background.png" with your image path
-        setLayout(new BorderLayout()); // Use BorderLayout for more flexible positioning
+       
+        setContentPane(new JLabel(new ImageIcon("./resources/background.png"))); 
+        setLayout(new BorderLayout());
 
-        // Initialize snakes and ladders
         initializeSnakesAndLadders();
 
-        // Create and add tiles to the board
+       
         JPanel boardPanel = new JPanel();
-        boardPanel.setOpaque(false); // Make the panel transparent
-        boardPanel.setLayout(new GridLayout(10, 10)); // 10x10 grid layout for the board
+        boardPanel.setOpaque(false); 
+        boardPanel.setLayout(new GridLayout(10, 10)); 
         boolean isEvenRow = true;
         for (int row = 9; row >= 0; row--) {
             if (isEvenRow) {
@@ -57,21 +56,19 @@ public class GameBoard extends JFrame {
             isEvenRow = !isEvenRow;
         }
 
-        // Add the board panel to the center
+    
         add(boardPanel, BorderLayout.CENTER);
-
-        // Create panel for the bottom section
+   
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new BorderLayout());
 
-        // Add username label to the bottom
         JLabel usernameLabel = new JLabel("Welcome, " + username);
-        usernameLabel.setOpaque(true); // Make the label opaque to show the background
-        usernameLabel.setBackground(Color.WHITE); // Set the background color of the label
-        usernameLabel.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
+        usernameLabel.setOpaque(true); 
+        usernameLabel.setBackground(Color.WHITE); 
+        usernameLabel.setHorizontalAlignment(SwingConstants.CENTER); 
         bottomPanel.add(usernameLabel, BorderLayout.NORTH);
 
-        // Create roll button
+   
         JButton rollButton = new JButton("Roll");
         rollButton.addActionListener(new ActionListener() {
             @Override
@@ -81,47 +78,46 @@ public class GameBoard extends JFrame {
         });
         bottomPanel.add(rollButton, BorderLayout.WEST);
 
-        // Create exit button
+      
         JButton exitBtn = new JButton("Exit");
         exitBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose(); // Dispose of the current GameBoard window
-                Main mainMenu = new Main(); // Create a new instance of the Main menu
-                mainMenu.setVisible(true); // Display the Main menu window
+                setVisible(false);
+                Main mainMenu = new Main(); 
+                mainMenu.setVisible(true); 
             }
         });
 
         bottomPanel.add(exitBtn, BorderLayout.EAST);
 
-        // Create position label
+        
         positionLabel = new JLabel("Position: 1");
-        positionLabel.setOpaque(true); // Make the label opaque
-        positionLabel.setBackground(Color.WHITE); // Set the background color of the label
-        positionLabel.setHorizontalAlignment(SwingConstants.CENTER); // Center align the text
+        positionLabel.setOpaque(true); 
+        positionLabel.setBackground(Color.WHITE); 
+        positionLabel.setHorizontalAlignment(SwingConstants.CENTER); 
         bottomPanel.add(positionLabel, BorderLayout.CENTER);
 
-        // Add bottom panel
+        
         add(bottomPanel, BorderLayout.SOUTH);
 
         setVisible(true);
 
-        // Highlight the starting position
         highlightCurrentPosition();
     }
 
     private void addTileToBoard(JPanel boardPanel, int row, int col) {
         int tileNumber = row * 10 + col + 1;
         JButton tile = new JButton(Integer.toString(tileNumber));
-        tile.setPreferredSize(new Dimension(35, 35)); // smaller tiles
-        tile.setEnabled(false); // Disable buttons
-        tiles[tileNumber - 1] = tile; // Store reference in array
-        colorTile(tileNumber, tile); // Color the tile if it's a snake or ladder
-        boardPanel.add(tile); // Add buttons to the board panel
+        tile.setPreferredSize(new Dimension(35, 35)); 
+        tile.setEnabled(false); 
+        tiles[tileNumber - 1] = tile; 
+        colorTile(tileNumber, tile); 
+        boardPanel.add(tile); 
     }
 
     private void initializeSnakesAndLadders() {
-        // Snakes
+        // snakes positions and value
         snakes.add(24);
         snakes.add(51);
         snakes.add(75);
@@ -130,7 +126,7 @@ public class GameBoard extends JFrame {
         snakeDeduction.put(51, -23);
         snakeDeduction.put(75, -20);
 
-        // Ladders
+        // ladders position and value
         ladders.add(9);
         ladders.add(39);
         ladders.add(63);
@@ -144,17 +140,17 @@ public class GameBoard extends JFrame {
 
     private void rollDice() {
         Random rand = new Random();
-        int roll = rand.nextInt(6) + 1; // Roll a 6-sided die
+        int roll = rand.nextInt(6) + 1; 
         int newPosition = currentPosition + roll;
 
         if (newPosition > 99) {
             JOptionPane.showMessageDialog(this, "You rolled too high! You need to roll " + (99 - currentPosition) + " or less to win. Roll again.");
         } else {
-            numberOfMoves++; // Increment the number of moves
+            numberOfMoves++; 
             updatePosition(newPosition);
             if (currentPosition == 99) {
                 JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders! \n Exit to Leaderboard to view your score!");
-                saveGameResult(); // Save the game result to the leaderboard database
+                saveGameResult(); 
             }
         }
     }
@@ -188,8 +184,8 @@ public class GameBoard extends JFrame {
     }
 
     private void updatePosition(int newPosition) {
-        tiles[currentPosition].setBackground(null); // Revert the current position's tile color
-        colorTile(currentPosition + 1, tiles[currentPosition]); // Revert the color of the tile
+        tiles[currentPosition].setBackground(null); 
+        colorTile(currentPosition + 1, tiles[currentPosition]); 
         currentPosition = newPosition;
         highlightCurrentPosition();
         if (snakes.contains(newPosition + 1)) {

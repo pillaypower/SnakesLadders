@@ -28,8 +28,8 @@ public class Username extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String username = textField.getText().trim();
                 if (!username.isEmpty()) {
-                    dispose(); // Close the Username window
-                    // Pass the username to the GameBoard
+                    setVisible(false);
+                    
                     SwingUtilities.invokeLater(() -> new GameBoard(username));
                 } else {
                     JOptionPane.showMessageDialog(Username.this, "Please enter a valid username.");
@@ -44,5 +44,4 @@ public class Username extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(Username::new);
     }
-}
-;
+};
