@@ -20,6 +20,10 @@ public class GameBoard extends JFrame {
     private Set<Integer> ladders = new HashSet<>();
     private HashMap<Integer, Integer> snakeDeduction = new HashMap<>();
     private HashMap<Integer, Integer> ladderAddition = new HashMap<>();
+    
+    private int numberOfMoves = 0;
+    private int snakesBitten = 0;
+    private int laddersClimbed = 0;
 
     public GameBoard(String username) {
         this.username = username; // Store the username
@@ -140,7 +144,7 @@ exitBtn.addActionListener(new ActionListener() {
         ladderAddition.put(88, 4);
     }
 
-    private void rollDice() {
+  private void rollDice() {
         Random rand = new Random();
         int roll = rand.nextInt(6) + 1; // Roll a 6-sided die
         int newPosition = currentPosition + roll;
@@ -151,9 +155,15 @@ exitBtn.addActionListener(new ActionListener() {
             updatePosition(newPosition);
             if (currentPosition == 99) {
                 JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders! \n Exit to Leaderboard to view your score!");
+                saveGameResult(); // Save the game result to the leaderboard database
             }
         }
     }
+
+    private void saveGameResult() {
+        Leaderboard.updateUserStats(username, numberOfMoves, snakesBitten, laddersClimbed);
+    }
+
 
     private void updatePosition(int newPosition) {
         tiles[currentPosition].setBackground(null); // Revert the current position's tile color
