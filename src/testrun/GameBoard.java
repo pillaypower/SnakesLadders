@@ -160,21 +160,47 @@ public class GameBoard extends JFrame {
     }
 
     private void saveGameResult() {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
+    Connection conn = null;
+    PreparedStatement pstmt = null;
 
-        try {
-            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/Leader_boardDB", "pdc", "pdc");
-            pstmt = conn.prepareStatement("INSERT INTO GameStatistics (USERNAME, NUMBEROFMOVES, SNAKESBITTEN, LADDERSCLIMBED) VALUES (?, ?, ?, ?)");
-            pstmt.setString(1, username);
-            pstmt.setInt(2, numberOfMoves);
-            pstmt.setInt(3, snakesBitten);
-            pstmt.setInt(4, laddersClimbed);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
+    try {
+        // Connect to the database
+        String dbURL = "jdbc:derby://localhost:1527/Leader_boardDB;user=myUsername;password=myPassword";
+        conn = DriverManager.getConnection(dbURL);
+
+        // Verify connection
+        if (conn != null) {
+            System.out.println("Connected to the database successfully.");
+        } else {
+            System.err.println("Failed to make connection to the database.");
+            return;
+        }
+
+        // Prepare the SQL statement
+        String sql = "INSERT INTO GameStatistics (username, numberOfMoves, snakesBitten, laddersClimbed) VALUES (?, ?, ?, ?)";
+        pstmt = conn.prepareStatement(sql);
+
+        // Set the parameters
+        pstmt.setString(1, username);
+        pstmt.setInt(2, numberOfMoves);
+        pstmt.setInt(3, snakesBitten);
+        pstmt.setInt(4, laddersClimbed);
+
+        // Execute the statement
+        int rowsInserted = pstmt.executeUpdate();
+        if (rowsInserted > 0) {
+            System.out.println("A new game result was inserted successfully.");
+        } else {
+            System.err.println("No rows were inserted into the database.");
+        }
+    } catch (SQLException e) {
+        // Print detailed error information
+        System.err.println("SQLException: " + e.getMessage());
+        System.err.println("SQLState: " + e.getSQLState());
+        System.err.println("VendorError: " + e.getErrorCode());
+        e.printStackTrace();
+    } finally {
+        // Close resources
                 if (pstmt != null) {
                     pstmt.close();
                 }
@@ -186,6 +212,7 @@ public class GameBoard extends JFrame {
             }
         }
     }
+
 
     private void updatePosition(int newPosition) {
         tiles[currentPosition].setBackground(null); // Revert the current position's tile color
