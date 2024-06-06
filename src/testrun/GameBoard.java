@@ -160,8 +160,20 @@ exitBtn.addActionListener(new ActionListener() {
         }
     }
 
-    private void saveGameResult() {
-        Leaderboard.updateUserStats(username, numberOfMoves, snakesBitten, laddersClimbed);
+     private void saveGameResult() {
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:derby:LeaderboardDB");
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO GameStatistics (username, numberOfMoves, snakesBitten, laddersClimbed) VALUES (?, ?, ?, ?)");
+            pstmt.setString(1, username);
+            pstmt.setInt(2, numberOfMoves);
+            pstmt.setInt(3, snakesBitten);
+            pstmt.setInt(4, laddersClimbed);
+            pstmt.executeUpdate();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
