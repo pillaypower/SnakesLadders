@@ -1,2 +1,14 @@
-Thu Jun 06 15:00:18 NZST 2024 : Could not listen on port 1527 on host localhost:
- java.net.BindException: Address already in use (Bind failed)
+Thu Jun 06 15:02:40 GMT+12:00 2024 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Thu Jun 06 15:02:41 GMT+12:00 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018f-eb7f-9f2f-000019d83767 
+on database directory C:\Users\ishaa\Desktop\SnakesLadders\Leader_boardDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09 
+Loaded from file:/C:/Users/ishaa/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.21+9-LTS-193
+user.dir=C:\Users\ishaa\Downloads\db-derby-10.14.2.0-bin\db-derby-10.14.2.0-bin
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\ishaa\Desktop\SnakesLadders
+Database Class Loader started - derby.database.classpath=''

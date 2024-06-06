@@ -13,14 +13,11 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class DBManager {
-<<<<<<< HEAD
     private static final String DB_URL = "jdbc:derby:Leader_boardDB;create=true";
     private static final String USER = "pdc";
-=======
 
     private static final String URL = "jdbc:derby://localhost:1527/Leader_boardDB";
     private static final String USER_NAME = "pdc";
->>>>>>> 5b2ec15c71448d1a9a35d5c85b4f9ab03d9dce8f
     private static final String PASSWORD = "pdc";
 
     public static void main(String[] args) {
