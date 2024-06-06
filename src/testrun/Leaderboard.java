@@ -28,7 +28,7 @@ public class Leaderboard extends JFrame {
 
         // Fetch data from the database and append it to the JTextArea
         try {
-            Connection conn = DriverManager.getConnection("jdbc:derby:LeaderboardDB");
+            Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/Leader_boardDB", "pdc", "pdc");
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM GameStatistics ORDER BY numberOfMoves ASC FETCH FIRST 3 ROWS ONLY"); // Change the query as needed
             
