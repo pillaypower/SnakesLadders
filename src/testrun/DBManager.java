@@ -11,7 +11,7 @@ import java.sql.Statement;
 
 public class DBManager {
 
-    private static final String URL = "jdbc:derby://localhost:1527/LeaderboardDB";
+    private static final String URL = "jdbc:derby://localhost:1527/Leader_boardDB";
     private static final String USER_NAME = "pdc";
     private static final String PASSWORD = "pdc";
 
