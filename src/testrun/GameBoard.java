@@ -167,7 +167,7 @@ public class GameBoard extends JFrame {
         // Connect to the database
         conn = DriverManager.getConnection("jdbc:derby://localhost:1527/Leader_boardDB");
         
-        // Verify connection
+        // Verify connectionbvnbmvn
         if (conn != null) {
             System.out.println("Connected to the database successfully.");
         } else {
