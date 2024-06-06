@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Random;
@@ -81,18 +82,15 @@ public class GameBoard extends JFrame {
         bottomPanel.add(rollButton, BorderLayout.WEST);
 
         // Create exit button
-       // Inside GameBoard class
-JButton exitBtn = new JButton("Exit");
-exitBtn.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        dispose(); // Dispose of the current GameBoard window
-        Main mainMenu = new Main(); // Create a new instance of the Main menu
-        mainMenu.setVisible(true); // Display the Main menu window
-    }
-});
-
-        
+        JButton exitBtn = new JButton("Exit");
+        exitBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose(); // Dispose of the current GameBoard window
+                Main mainMenu = new Main(); // Create a new instance of the Main menu
+                mainMenu.setVisible(true); // Display the Main menu window
+            }
+        });
         
         bottomPanel.add(exitBtn, BorderLayout.EAST);
 
@@ -144,7 +142,7 @@ exitBtn.addActionListener(new ActionListener() {
         ladderAddition.put(88, 4);
     }
 
-  private void rollDice() {
+    private void rollDice() {
         Random rand = new Random();
         int roll = rand.nextInt(6) + 1; // Roll a 6-sided die
         int newPosition = currentPosition + roll;
@@ -152,6 +150,7 @@ exitBtn.addActionListener(new ActionListener() {
         if (newPosition > 99) {
             JOptionPane.showMessageDialog(this, "You rolled too high! You need to roll " + (99 - currentPosition) + " or less to win. Roll again.");
         } else {
+            numberOfMoves++; // Increment the number of moves
             updatePosition(newPosition);
             if (currentPosition == 99) {
                 JOptionPane.showMessageDialog(this, "Congratulations, " + username + "! You have completed Snakes and Ladders! \n Exit to Leaderboard to view your score!");
@@ -160,9 +159,9 @@ exitBtn.addActionListener(new ActionListener() {
         }
     }
 
-     private void saveGameResult() {
+    private void saveGameResult() {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:derby:LeaderboardDB");
+            Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/Leader_boardDB");
             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO GameStatistics (username, numberOfMoves, snakesBitten, laddersClimbed) VALUES (?, ?, ?, ?)");
             pstmt.setString(1, username);
             pstmt.setInt(2, numberOfMoves);
@@ -175,7 +174,6 @@ exitBtn.addActionListener(new ActionListener() {
             e.printStackTrace();
         }
     }
-
 
     private void updatePosition(int newPosition) {
         tiles[currentPosition].setBackground(null); // Revert the current position's tile color
@@ -192,9 +190,11 @@ exitBtn.addActionListener(new ActionListener() {
         while (snakes.contains(currentPosition) || ladders.contains(currentPosition)) {
             if (snakes.contains(currentPosition)) {
                 currentPosition += snakeDeduction.get(currentPosition);
+                snakesBitten++;
                 JOptionPane.showMessageDialog(this, "Oh no! You landed on a snake. Moving down to position: " + (currentPosition + 1));
             } else if (ladders.contains(currentPosition)) {
                 currentPosition += ladderAddition.get(currentPosition);
+                laddersClimbed++;
                 JOptionPane.showMessageDialog(this, "Great! You landed on a ladder. Moving up to position: " + (currentPosition + 1));
             }
             moved = true;
